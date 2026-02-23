@@ -137,7 +137,7 @@ export default function AdminPage() {
       {/* Toast */}
       {toast && (
         <div
-          className={`fixed top-6 right-6 z-50 px-6 py-3 rounded-xl shadow-lg text-white font-medium transition-all animate-fade-in ${
+          className={`fixed top-6 right-6 z-50 px-6 py-3 rounded-xl shadow-lg text-white font-medium transition-all ${
             toast.type === 'success' ? 'bg-green-500' : 'bg-red-500'
           }`}
         >
