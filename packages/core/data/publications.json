@@ -1,0 +1,10 @@
+[
+  {
+    "id": "pub-1",
+    "title": "A Modular Pipeline for Brain-Computer Interfaces",
+    "authors": ["Raghav R.", "Priya K.", "Sam L."],
+    "venue": "BCI Workshop",
+    "year": 2024,
+    "url": "https://example.com/pub1"
+  }
+]

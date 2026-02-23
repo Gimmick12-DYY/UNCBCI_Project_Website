@@ -1,0 +1,34 @@
+{
+  "": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    "target": "ES2020",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "jsx": "preserve",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "allowJs": false,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "incremental": true,
+    "baseUrl": ".",
+    "paths": {
+      "@uncbci/core": ["../../packages/core/src/index.ts"],
+      "@uncbci/core/*": ["../../packages/core/*"],
+      "@uncbci/ui": ["../../packages/ui/src/index.ts"],
+      "@uncbci/ui/*": ["../../packages/ui/src/*"]
+    },
+    "types": ["node", "react"]
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.cjs",
+    "**/*.mjs"
+  ],
+  "exclude": ["node_modules"]
+}

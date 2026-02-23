@@ -1,0 +1,42 @@
+[
+  {
+    "id": "raghav-1",
+    "name": "Prof. Raghav",
+    "role": "PI",
+    "bio": "Leads the UNC BCI project.",
+    "photoUrl": "/people/raghav.jpg",
+    "affiliation": "UNC"
+  },
+  {
+    "id": "collab-1",
+    "name": "Alex Chen",
+    "role": "Collaborator",
+    "bio": "Collaborating engineer on hardware integration.",
+    "photoUrl": "/people/alex.jpg",
+    "affiliation": "UNC"
+  },
+  {
+    "id": "phd-1",
+    "name": "Priya Kumar",
+    "role": "PhD",
+    "bio": "Works on neural decoding algorithms.",
+    "photoUrl": "/people/priya.jpg",
+    "affiliation": "UNC"
+  },
+  {
+    "id": "grad-1",
+    "name": "Sam Lee",
+    "role": "Graduate",
+    "bio": "Focus on signal processing pipeline.",
+    "photoUrl": "/people/sam.jpg",
+    "affiliation": "UNC"
+  },
+  {
+    "id": "ug-1",
+    "name": "Taylor Smith",
+    "role": "Undergraduate",
+    "bio": "Assists with data collection.",
+    "photoUrl": "/people/taylor.jpg",
+    "affiliation": "UNC"
+  }
+]
