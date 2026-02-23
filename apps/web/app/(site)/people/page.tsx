@@ -1,5 +1,5 @@
 import React from 'react';
-import people from '../../data/people.json';
+import people from '../../../data/people.json';
 
 type Person = {
   id: string;
@@ -61,5 +61,7 @@ export default function PeoplePage() {
     </div>
   );
 }
+
+
 
 

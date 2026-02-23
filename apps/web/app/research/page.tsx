@@ -1,5 +1,5 @@
 import React from 'react';
-import publications from '../data/publications.json';
+import publications from '../../data/publications.json';
 
 type Publication = {
   id: string;
@@ -31,5 +31,7 @@ export default function ResearchPage() {
     </div>
   );
 }
+
+
 
 

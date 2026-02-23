@@ -1,6 +1,6 @@
 'use client';
 import React, { useMemo, useState } from 'react';
-import people from '@uncbci/core/data/people.json';
+import people from '../../data/people.json';
 
 type Person = {
   id: string;
@@ -62,3 +62,4 @@ export default function AdminPage() {
     </div>
   );
 }
+

@@ -1,0 +1,16 @@
+[
+  {
+    "id": "news-1",
+    "title": "Project kickoff meeting held",
+    "date": "2024-09-01T00:00:00.000Z",
+    "summary": "Initial planning and scope discussion among team members.",
+    "peopleIds": ["raghav-1", "collab-1"]
+  },
+  {
+    "id": "news-2",
+    "title": "First data collection session completed",
+    "date": "2024-10-15T00:00:00.000Z",
+    "summary": "Collected baseline neural signal datasets.",
+    "peopleIds": ["phd-1", "grad-1", "ug-1"]
+  }
+]
