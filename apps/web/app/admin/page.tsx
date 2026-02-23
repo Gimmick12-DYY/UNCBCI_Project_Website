@@ -68,12 +68,16 @@ export default function AdminPage() {
     if (!confirm('Are you sure you want to delete this update?')) return;
     try {
       const res = await fetch(`/api/news/${id}`, { method: 'DELETE' });
-      if (!res.ok) throw new Error();
+      if (!res.ok) {
+        const errBody = await res.json().catch(() => ({}));
+        throw new Error(errBody.error || `Delete failed (${res.status})`);
+      }
       setNewsItems(prev => prev.filter(item => item.id !== id));
       if (editingId === id) resetForm();
       setToast({ message: 'Update deleted successfully', type: 'success' });
-    } catch {
-      setToast({ message: 'Failed to delete update', type: 'error' });
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : 'Failed to delete update';
+      setToast({ message: msg, type: 'error' });
     }
   };
 
@@ -87,7 +91,10 @@ export default function AdminPage() {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ title, summary, peopleIds: selectedPeopleIds, status }),
         });
-        if (!res.ok) throw new Error();
+        if (!res.ok) {
+          const errBody = await res.json().catch(() => ({}));
+          throw new Error(errBody.error || `Update failed (${res.status})`);
+        }
         const updated = await res.json();
         setNewsItems(prev => prev.map(item => (item.id === editingId ? updated : item)));
         setToast({ message: 'Update saved successfully', type: 'success' });
@@ -97,7 +104,10 @@ export default function AdminPage() {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ title, summary, peopleIds: selectedPeopleIds, status }),
         });
-        if (!res.ok) throw new Error();
+        if (!res.ok) {
+          const errBody = await res.json().catch(() => ({}));
+          throw new Error(errBody.error || `Create failed (${res.status})`);
+        }
         const created = await res.json();
         setNewsItems(prev => [created, ...prev]);
         setToast({
@@ -106,8 +116,9 @@ export default function AdminPage() {
         });
       }
       resetForm();
-    } catch {
-      setToast({ message: 'Something went wrong. Please try again.', type: 'error' });
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : 'Something went wrong';
+      setToast({ message: msg, type: 'error' });
     } finally {
       setSaving(false);
     }

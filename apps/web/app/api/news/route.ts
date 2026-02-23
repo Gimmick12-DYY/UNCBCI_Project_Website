@@ -4,12 +4,21 @@ import { revalidatePath } from 'next/cache';
 
 export const dynamic = 'force-dynamic';
 
+function tryRevalidate(paths: string[]) {
+  try {
+    paths.forEach(p => revalidatePath(p));
+  } catch {
+    // best-effort; pages use force-dynamic so they refresh anyway
+  }
+}
+
 export async function GET(request: NextRequest) {
   try {
     const all = request.nextUrl.searchParams.get('all') === 'true';
     const items = all ? await getAllNews() : await getPublishedNews();
     return NextResponse.json(items);
-  } catch {
+  } catch (err) {
+    console.error('[GET /api/news]', err);
     return NextResponse.json({ error: 'Failed to fetch news' }, { status: 500 });
   }
 }
@@ -31,11 +40,12 @@ export async function POST(request: NextRequest) {
       status: status || 'published',
     });
 
-    revalidatePath('/');
-    revalidatePath('/news');
+    tryRevalidate(['/', '/news']);
 
     return NextResponse.json(newItem, { status: 201 });
-  } catch {
-    return NextResponse.json({ error: 'Failed to create news item' }, { status: 500 });
+  } catch (err) {
+    console.error('[POST /api/news]', err);
+    const message = err instanceof Error ? err.message : 'Failed to create news item';
+    return NextResponse.json({ error: message }, { status: 500 });
   }
 }
