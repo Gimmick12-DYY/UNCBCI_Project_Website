@@ -15,6 +15,7 @@ export interface NewsItem {
   date: string; // ISO string
   summary?: string;
   peopleIds?: string[];
+  status: 'draft' | 'published';
 }
 
 export interface Publication {

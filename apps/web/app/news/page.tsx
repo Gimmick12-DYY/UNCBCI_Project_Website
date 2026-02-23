@@ -1,22 +1,16 @@
 import React from 'react';
 import Link from 'next/link';
-import news from '../../data/news.json';
+import { getPublishedNews } from '../../lib/news';
 
-type NewsItem = {
-  id: string;
-  title: string;
-  date: string; // ISO string
-  summary?: string;
-  peopleIds?: string[];
-};
+export const dynamic = 'force-dynamic';
 
 export const metadata = {
   title: 'All Updates | UNC BCI Project',
   description: 'Latest news, announcements, and progress from the UNC Brain-Computer Interface Project.',
 };
 
-export default function NewsIndexPage() {
-  const items = (news as NewsItem[]).slice().sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+export default async function NewsIndexPage() {
+  const items = await getPublishedNews();
 
   return (
     <div className="space-y-12">

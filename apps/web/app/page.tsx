@@ -1,18 +1,13 @@
 import React from 'react';
 import Link from 'next/link';
-import news from '../data/news.json';
+import { getPublishedNews } from '../lib/news';
 import { Hero } from '../components';
 
-type NewsItem = {
-  id: string;
-  title: string;
-  date: string; // ISO string
-  summary?: string;
-  peopleIds?: string[];
-};
+export const dynamic = 'force-dynamic';
 
-export default function Page() {
-  const items = (news as NewsItem[]).slice(0, 3); // Show top 3 recent news
+export default async function Page() {
+  const allNews = await getPublishedNews();
+  const items = allNews.slice(0, 3);
 
   return (
     <div className="space-y-16">

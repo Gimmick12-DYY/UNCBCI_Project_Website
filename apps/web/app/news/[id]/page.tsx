@@ -1,16 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import news from '../../../data/news.json';
+import { getNewsById } from '../../../lib/news';
 import people from '../../../data/people.json';
 
-type NewsItem = {
-  id: string;
-  title: string;
-  date: string; // ISO
-  summary?: string;
-  peopleIds?: string[];
-};
+export const dynamic = 'force-dynamic';
 
 type Person = {
   id: string;
@@ -21,24 +15,19 @@ type Person = {
 };
 
 const roster = people as Person[];
-const items = news as NewsItem[];
-
-export async function generateStaticParams() {
-  return items.map((n) => ({ id: n.id }));
-}
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const item = items.find((n) => n.id === id);
-  if (!item) return { title: 'Update Not Found' };
+  const item = await getNewsById(id);
+  if (!item || item.status !== 'published') return { title: 'Update Not Found' };
   return { title: `${item.title} | UNC BCI Project`, description: item.summary };
 }
 
 export default async function NewsDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const item = items.find((n) => n.id === id);
+  const item = await getNewsById(id);
   
-  if (!item) return notFound();
+  if (!item || item.status !== 'published') return notFound();
 
   const linkedPeople = (item.peopleIds || [])
     .map((pid) => roster.find((p) => p.id === pid))
@@ -66,7 +55,6 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ id:
       </header>
 
       <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
-        {/* In a real app, this would be rich text. For now, we render the summary as the body. */}
         {item.summary ? (
           <p className="text-xl text-gray-600 font-light border-l-4 border-unc pl-6 italic my-8">
             {item.summary}
