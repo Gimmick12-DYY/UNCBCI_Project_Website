@@ -1,67 +1,72 @@
 import React from 'react';
-import people from '../../../data/people.json';
+import peopleData from '../../../data/people.json';
+import { PersonCard } from '../../../components';
 
 type Person = {
   id: string;
   name: string;
-  role: 'PI' | 'Collaborator' | 'PhD' | 'Graduate' | 'Undergraduate';
+  role: string;
   bio: string;
   photoUrl?: string;
   affiliation?: string;
 };
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
+  if (React.Children.count(children) === 0) return null;
+  
   return (
-    <section className="space-y-3">
-      <h2 className="text-2xl font-semibold">{title}</h2>
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <section className="py-8 border-b border-gray-100 last:border-0">
+      <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+        <span className="w-2 h-8 bg-unc rounded-full mr-3"></span>
+        {title}
+      </h2>
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {children}
       </div>
     </section>
   );
 }
 
-function PersonCard({ p }: { p: Person }) {
-  return (
-    <div className="border rounded p-4">
-      <div className="flex items-center gap-3">
-        <div className="h-16 w-16 bg-gray-200 rounded" aria-label="photo" />
-        <div>
-          <div className="font-medium">{p.name}</div>
-          {p.affiliation && <div className="text-sm text-gray-600">{p.affiliation}</div>}
-        </div>
-      </div>
-      {p.bio && <p className="text-sm text-gray-700 mt-3">{p.bio}</p>}
-    </div>
-  );
-}
-
 export default function PeoplePage() {
-  const roster = people as Person[];
-  const byRole = (role: Person['role']) => roster.filter(p => p.role === role);
+  const people = peopleData as Person[];
+  
+  // Group people by role
+  const pi = people.filter(p => p.role === 'PI');
+  const collaborators = people.filter(p => p.role === 'Collaborator');
+  const phd = people.filter(p => p.role === 'PhD');
+  const graduates = people.filter(p => p.role === 'Graduate');
+  const undergraduates = people.filter(p => p.role === 'Undergraduate');
+
   return (
-    <div className="space-y-8">
-      <h1 className="text-3xl font-bold">People</h1>
+    <div className="space-y-4">
+      <div className="text-center max-w-3xl mx-auto mb-12">
+        <h1 className="text-4xl font-bold text-gray-900 mb-4">Our Team</h1>
+        <p className="text-xl text-gray-600">
+          Meet the dedicated researchers, students, and collaborators behind the UNC BCI Project.
+        </p>
+      </div>
 
-      <Section title="Head Professor & Collaborators">
-        {byRole('PI').concat(byRole('Collaborator')).map(p => <PersonCard key={p.id} p={p} />)}
-      </Section>
+      <div className="space-y-4">
+        <Section title="Principal Investigator">
+          {pi.map(p => <PersonCard key={p.id} {...p} />)}
+        </Section>
 
-      <Section title="PhD Students">
-        {byRole('PhD').map(p => <PersonCard key={p.id} p={p} />)}
-      </Section>
+        <Section title="Collaborators">
+          {collaborators.map(p => <PersonCard key={p.id} {...p} />)}
+        </Section>
 
-      <Section title="Graduate Students">
-        {byRole('Graduate').map(p => <PersonCard key={p.id} p={p} />)}
-      </Section>
+        <Section title="PhD Students">
+          {phd.map(p => <PersonCard key={p.id} {...p} />)}
+        </Section>
 
-      <Section title="Undergraduate Students">
-        {byRole('Undergraduate').map(p => <PersonCard key={p.id} p={p} />)}
-      </Section>
+        <Section title="Graduate Students">
+          {graduates.map(p => <PersonCard key={p.id} {...p} />)}
+        </Section>
+
+        <Section title="Undergraduate Students">
+          {undergraduates.map(p => <PersonCard key={p.id} {...p} />)}
+        </Section>
+      </div>
     </div>
   );
 }
-
-
-
-
