@@ -1,7 +1,5 @@
 import { promises as fs } from 'fs';
 import path from 'path';
-import { put, list } from '@vercel/blob';
-import initialData from '../data/news.json';
 
 export interface NewsItem {
   id: string;
@@ -12,28 +10,41 @@ export interface NewsItem {
   status: 'draft' | 'published';
 }
 
+/* ── Supabase row ↔ NewsItem mapping ─────────────────────── */
+
+interface NewsRow {
+  id: string;
+  title: string;
+  date: string;
+  summary: string | null;
+  people_ids: string[];
+  status: string;
+}
+
+function rowToItem(row: NewsRow): NewsItem {
+  return {
+    id: row.id,
+    title: row.title,
+    date: row.date,
+    summary: row.summary ?? undefined,
+    peopleIds: row.people_ids,
+    status: (row.status as NewsItem['status']) || 'published',
+  };
+}
+
+/* ── Storage backend detection ───────────────────────────── */
+
+const useSupabase = () =>
+  !!(process.env.SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY);
+
+async function getSupabase() {
+  const { supabase } = await import('./supabase');
+  return supabase;
+}
+
+/* ── Local filesystem helpers (development fallback) ─────── */
+
 const LOCAL_PATH = path.join(process.cwd(), 'data', 'news.json');
-const BLOB_KEY = 'news.json';
-
-const useBlob = () => !!process.env.BLOB_READ_WRITE_TOKEN;
-
-/* ── Vercel Blob helpers ─────────────────────────────────── */
-
-async function blobRead(): Promise<{ found: boolean; items: NewsItem[] }> {
-  const { blobs } = await list({ prefix: BLOB_KEY, limit: 1 });
-  if (blobs.length === 0) return { found: false, items: [] };
-  const res = await fetch(blobs[0].url);
-  return { found: true, items: await res.json() };
-}
-
-async function blobWrite(items: NewsItem[]): Promise<void> {
-  await put(BLOB_KEY, JSON.stringify(items, null, 2), {
-    access: 'public',
-    addRandomSuffix: false,
-  });
-}
-
-/* ── Local filesystem helpers ────────────────────────────── */
 
 async function localRead(): Promise<NewsItem[]> {
   try {
@@ -55,42 +66,35 @@ async function localWrite(items: NewsItem[]): Promise<void> {
   await fs.writeFile(LOCAL_PATH, JSON.stringify(items, null, 2) + '\n', 'utf-8');
 }
 
-/* ── Unified read / write ────────────────────────────────── */
-
-async function readAll(): Promise<NewsItem[]> {
-  if (useBlob()) {
-    const { found, items } = await blobRead();
-    if (found) return items;
-    // First access on Vercel: seed blob from the bundled JSON
-    const seed = (initialData as unknown as NewsItem[]).map(item => ({
-      ...item,
-      status: (item.status as NewsItem['status']) || 'published',
-    }));
-    await blobWrite(seed);
-    return seed;
-  }
-  return localRead();
-}
-
-async function writeAll(items: NewsItem[]): Promise<void> {
-  if (useBlob()) {
-    await blobWrite(items);
-  } else {
-    await localWrite(items);
-  }
-}
-
 /* ── Public API ──────────────────────────────────────────── */
 
 export async function getAllNews(): Promise<NewsItem[]> {
-  const items = await readAll();
-  return items.map(item => ({
-    ...item,
-    status: item.status || 'published',
-  }));
+  if (useSupabase()) {
+    const sb = await getSupabase();
+    const { data, error } = await sb
+      .from('news')
+      .select('*')
+      .order('date', { ascending: false });
+    if (error) throw new Error(error.message);
+    return (data as NewsRow[]).map(rowToItem);
+  }
+
+  const items = await localRead();
+  return items.map(item => ({ ...item, status: item.status || 'published' }));
 }
 
 export async function getPublishedNews(): Promise<NewsItem[]> {
+  if (useSupabase()) {
+    const sb = await getSupabase();
+    const { data, error } = await sb
+      .from('news')
+      .select('*')
+      .eq('status', 'published')
+      .order('date', { ascending: false });
+    if (error) throw new Error(error.message);
+    return (data as NewsRow[]).map(rowToItem);
+  }
+
   const items = await getAllNews();
   return items
     .filter(item => item.status === 'published')
@@ -98,15 +102,51 @@ export async function getPublishedNews(): Promise<NewsItem[]> {
 }
 
 export async function getNewsById(id: string): Promise<NewsItem | undefined> {
+  if (useSupabase()) {
+    const sb = await getSupabase();
+    const { data, error } = await sb
+      .from('news')
+      .select('*')
+      .eq('id', id)
+      .single();
+    if (error) {
+      if (error.code === 'PGRST116') return undefined; // not found
+      throw new Error(error.message);
+    }
+    return rowToItem(data as NewsRow);
+  }
+
   const items = await getAllNews();
   return items.find(item => item.id === id);
 }
 
-export async function createNewsItem(data: Omit<NewsItem, 'id'>): Promise<NewsItem> {
+export async function createNewsItem(
+  data: Omit<NewsItem, 'id'>,
+): Promise<NewsItem> {
+  const id = `news-${Date.now()}`;
+
+  if (useSupabase()) {
+    const sb = await getSupabase();
+    const { data: row, error } = await sb
+      .from('news')
+      .insert({
+        id,
+        title: data.title,
+        date: data.date,
+        summary: data.summary ?? null,
+        people_ids: data.peopleIds ?? [],
+        status: data.status,
+      })
+      .select()
+      .single();
+    if (error) throw new Error(error.message);
+    return rowToItem(row as NewsRow);
+  }
+
   const items = await getAllNews();
-  const newItem: NewsItem = { ...data, id: `news-${Date.now()}` };
+  const newItem: NewsItem = { ...data, id };
   items.push(newItem);
-  await writeAll(items);
+  await localWrite(items);
   return newItem;
 }
 
@@ -114,19 +154,51 @@ export async function updateNewsItem(
   id: string,
   data: Partial<Omit<NewsItem, 'id'>>,
 ): Promise<NewsItem | null> {
+  if (useSupabase()) {
+    const sb = await getSupabase();
+    const updates: Record<string, unknown> = { updated_at: new Date().toISOString() };
+    if (data.title !== undefined) updates.title = data.title;
+    if (data.summary !== undefined) updates.summary = data.summary ?? null;
+    if (data.peopleIds !== undefined) updates.people_ids = data.peopleIds;
+    if (data.status !== undefined) updates.status = data.status;
+    if (data.date !== undefined) updates.date = data.date;
+
+    const { data: row, error } = await sb
+      .from('news')
+      .update(updates)
+      .eq('id', id)
+      .select()
+      .single();
+    if (error) {
+      if (error.code === 'PGRST116') return null;
+      throw new Error(error.message);
+    }
+    return rowToItem(row as NewsRow);
+  }
+
   const items = await getAllNews();
   const idx = items.findIndex(item => item.id === id);
   if (idx === -1) return null;
   items[idx] = { ...items[idx], ...data };
-  await writeAll(items);
+  await localWrite(items);
   return items[idx];
 }
 
 export async function deleteNewsItem(id: string): Promise<boolean> {
+  if (useSupabase()) {
+    const sb = await getSupabase();
+    const { error, count } = await sb
+      .from('news')
+      .delete({ count: 'exact' })
+      .eq('id', id);
+    if (error) throw new Error(error.message);
+    return (count ?? 0) > 0;
+  }
+
   const items = await getAllNews();
   const idx = items.findIndex(item => item.id === id);
   if (idx === -1) return false;
   items.splice(idx, 1);
-  await writeAll(items);
+  await localWrite(items);
   return true;
 }
