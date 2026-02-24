@@ -13,14 +13,14 @@ type Person = {
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   if (React.Children.count(children) === 0) return null;
-  
+
   return (
-    <section className="py-8 border-b border-gray-100 last:border-0">
-      <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-        <span className="w-2 h-8 bg-unc rounded-full mr-3"></span>
+    <section className="py-8 border-b border-white/5 last:border-0">
+      <h2 className="text-lg font-semibold text-gray-200 mb-6 flex items-center gap-3">
+        <span className="w-1.5 h-6 bg-unc/50 rounded-full"></span>
         {title}
       </h2>
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {children}
       </div>
     </section>
@@ -29,8 +29,7 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 
 export default function PeoplePage() {
   const people = peopleData as Person[];
-  
-  // Group people by role
+
   const pi = people.filter(p => p.role === 'PI');
   const collaborators = people.filter(p => p.role === 'Collaborator');
   const phd = people.filter(p => p.role === 'PhD');
@@ -40,8 +39,9 @@ export default function PeoplePage() {
   return (
     <div className="space-y-4">
       <div className="text-center max-w-3xl mx-auto mb-12">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">Our Team</h1>
-        <p className="text-xl text-gray-600">
+        <p className="font-mono text-xs text-unc/50 mb-3 tracking-widest uppercase">// team</p>
+        <h1 className="text-4xl font-bold text-gray-100 mb-4">Our Team</h1>
+        <p className="text-lg text-gray-400">
           Meet the dedicated researchers, students, and collaborators behind the UNC BCI Project.
         </p>
       </div>
