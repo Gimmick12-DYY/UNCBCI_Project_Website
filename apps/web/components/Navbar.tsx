@@ -3,37 +3,44 @@ import Link from 'next/link';
 
 export function Navbar() {
   return (
-    <header className="sticky top-0 z-50 bg-[#0b1120]/80 backdrop-blur-xl border-b border-white/5 transition-all duration-300">
-      <div className="container mx-auto px-6 py-4 flex items-center justify-between">
+    <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 transition-all duration-300">
+      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="w-11 h-11 rounded-lg bg-unc/10 border border-unc/20 text-unc flex items-center justify-center font-mono font-bold text-sm tracking-tight transition-all group-hover:bg-unc/20 group-hover:border-unc/40 group-hover:shadow-glow-sm">
-            UNC
-          </div>
-          <div className="flex flex-col">
-            <span className="font-semibold text-[15px] leading-none text-gray-100 tracking-tight group-hover:text-unc transition-colors">
-              BCI Project
-            </span>
-            <span className="font-mono text-[9px] font-medium text-gray-500 tracking-[0.2em] uppercase mt-1 group-hover:text-unc/60 transition-colors">
-              research_lab
-            </span>
+          <div className="flex items-center gap-2.5">
+            <div className="w-10 h-10 rounded-full bg-unc-dark flex items-center justify-center overflow-hidden">
+              <svg viewBox="0 0 40 40" className="w-10 h-10" fill="none">
+                <circle cx="20" cy="20" r="20" fill="#13294B" />
+                <text x="20" y="24" textAnchor="middle" fontSize="12" fontWeight="bold" fill="white" fontFamily="serif">UNC</text>
+              </svg>
+            </div>
+            <div className="w-px h-8 bg-gray-200"></div>
+            <div className="flex flex-col">
+              <span className="font-bold text-base leading-none text-gray-900 tracking-tight group-hover:text-unc-dark transition-colors">
+                BCI Project
+              </span>
+              <span className="text-[10px] font-semibold text-gray-400 tracking-widest uppercase mt-0.5">
+                By Raghav Lab
+              </span>
+            </div>
           </div>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-1">
+        <nav className="hidden md:flex items-center gap-8">
+          <NavLink href="/why">Why BrainScan</NavLink>
           <NavLink href="/research">Research</NavLink>
-          <NavLink href="/product">Product</NavLink>
+          <NavLink href="/collaborators">Collaborators</NavLink>
           <NavLink href="/people">People</NavLink>
           <Link
             href="/admin"
-            className="ml-4 px-4 py-1.5 rounded-md border border-unc/20 text-unc/80 hover:border-unc/50 hover:text-unc hover:bg-unc/5 hover:shadow-glow-sm transition-all font-mono text-xs font-medium tracking-wide"
+            className="text-sm text-gray-400 italic hover:text-unc transition-colors"
           >
-            ./admin
+            /Admin
           </Link>
         </nav>
 
-        <button className="md:hidden text-gray-400 focus:outline-none hover:text-gray-200 transition-colors">
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16" />
+        <button className="md:hidden text-gray-600 focus:outline-none">
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
       </div>
@@ -45,10 +52,10 @@ function NavLink({ href, children }: { href: string; children: React.ReactNode }
   return (
     <Link
       href={href}
-      className="relative px-4 py-2 text-sm font-medium text-gray-400 hover:text-gray-100 transition-colors group"
+      className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors relative group"
     >
       {children}
-      <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-px bg-unc transition-all duration-300 group-hover:w-3/4 opacity-0 group-hover:opacity-60"></span>
+      <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-unc transition-all duration-300 group-hover:w-full"></span>
     </Link>
   );
 }

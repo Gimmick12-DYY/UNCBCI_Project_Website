@@ -1,10 +1,58 @@
 [
   {
-    "id": "pub-1",
-    "title": "A Modular Pipeline for Brain-Computer Interfaces",
-    "authors": ["Raghav R.", "Priya K.", "Sam L."],
-    "venue": "BCI Workshop",
+    "id": "scalo-isca23",
+    "title": "SCALO: An Accelerator-Rich Distributed System for Scalable Brain-Computer Interfacing",
+    "authors": ["Karthik Sriram", "Raghavendra Pradyumna Pothukuchi", "Michał Gerasimiuk", "Muhammed Ugur", "Oliver Ye", "Rajit Manohar", "Anurag Khandelwal", "Abhishek Bhattacharjee"],
+    "venue": "ISCA",
+    "year": 2023,
+    "url": "https://www.cs.unc.edu/~raghav/Documents/isca23.pdf"
+  },
+  {
+    "id": "halo-hotchips23",
+    "title": "HALO: A Hardware-Software Co-Designed Processor for Brain-Computer Interfaces",
+    "authors": ["Ioannis Karageorgos", "Karthik Sriram", "Xiayuan Wen", "Ján Veselý", "Nick Lindsay", "Michael Wu", "Lenny Khazan", "Raghavendra Pradyumna Pothukuchi", "Rajit Manohar", "Abhishek Bhattacharjee"],
+    "venue": "IEEE Micro HotChips",
+    "year": 2023,
+    "url": "https://www.cs.unc.edu/~raghav/Documents/microhc23.pdf"
+  },
+  {
+    "id": "scalo-toppicks24",
+    "title": "Distributed Brain-Computer Interfacing with a Networked Multi-Accelerator Architecture",
+    "authors": ["Raghavendra Pradyumna Pothukuchi", "Karthik Sriram", "Michał Gerasimiuk", "Muhammed Ugur", "Rajit Manohar", "Anurag Khandelwal", "Abhishek Bhattacharjee"],
+    "venue": "IEEE Micro Top Picks",
     "year": 2024,
-    "url": "https://example.com/pub1"
+    "url": "https://www.cs.unc.edu/~raghav/Documents/microtp24.pdf"
+  },
+  {
+    "id": "foresee-embc25",
+    "title": "Foresee: A Modular and Open Framework to Explore Processing on Brain-Computer Interfaces",
+    "authors": ["Aasmaan Yadav", "Fernando Cuello Garcia", "Alejandro Gonzalez", "Bernardo Eilert Trevisan", "Anna Xu", "Muhammed Ugur", "Abhishek Bhattacharjee", "Raghavendra Pradyumna Pothukuchi"],
+    "venue": "IEEE EMBC",
+    "year": 2025,
+    "url": "https://www.cs.unc.edu/~raghav/Documents/embc25.pdf"
+  },
+  {
+    "id": "spaa25",
+    "title": "Dataflow-Specific Algorithms for Resource-Constrained Scheduling and Memory Design",
+    "authors": ["Abhishek Bhattacharjee", "Quanquan C Liu", "Rajit Manohar", "Raghavendra Pradyumna Pothukuchi", "Muhammed Ugur"],
+    "venue": "ACM SPAA",
+    "year": 2025,
+    "url": "https://www.cs.unc.edu/~raghav/Documents/spaa25.pdf"
+  },
+  {
+    "id": "distill-cgo22",
+    "title": "Distill: Domain-Specific Compilation for Cognitive Models",
+    "authors": ["Ján Veselý", "Raghavendra Pradyumna Pothukuchi", "Ketaki Joshi", "Samyak Gupta", "Jonathan D. Cohen", "Abhishek Bhattacharjee"],
+    "venue": "CGO",
+    "year": 2022,
+    "url": "https://www.cs.unc.edu/~raghav/Documents/cgo22.pdf"
+  },
+  {
+    "id": "maya-isca21",
+    "title": "Maya: Using Formal Control to Obfuscate Power Side Channels",
+    "authors": ["Raghavendra Pradyumna Pothukuchi", "Sweta Yamini Pothukuchi", "Petros Voulgaris", "Alexander Schwing", "Josep Torrellas"],
+    "venue": "ISCA",
+    "year": 2021,
+    "url": "https://www.cs.unc.edu/~raghav/Documents/isca21.pdf"
   }
 ]

@@ -13,34 +13,18 @@ module.exports = {
           dark: '#13294B',
           light: '#E6F3FF',
         },
-        surface: {
-          DEFAULT: '#111827',
-          raised: '#1a2235',
-          overlay: '#1e293b',
-        },
-        accent: {
-          DEFAULT: '#4B9CD3',
-          glow: 'rgba(75,156,211,0.15)',
-          muted: 'rgba(75,156,211,0.08)',
+        slate: {
+          950: '#0a0f1a',
         },
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        serif: ['var(--font-dm-serif)', 'Georgia', 'serif'],
         mono: ['var(--font-mono)', 'ui-monospace', 'monospace'],
       },
       boxShadow: {
-        glow: '0 0 20px rgba(75,156,211,0.15)',
-        'glow-sm': '0 0 10px rgba(75,156,211,0.1)',
-        'glow-lg': '0 0 40px rgba(75,156,211,0.2)',
-      },
-      backgroundImage: {
-        'grid-pattern': `
-          linear-gradient(rgba(75,156,211,0.03) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(75,156,211,0.03) 1px, transparent 1px)
-        `,
-      },
-      backgroundSize: {
-        grid: '32px 32px',
+        card: '0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04)',
+        'card-hover': '0 10px 25px rgba(0,0,0,0.08), 0 4px 10px rgba(0,0,0,0.04)',
       },
     },
   },

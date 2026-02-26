@@ -1,35 +1,90 @@
 import React from 'react';
 import Link from 'next/link';
 
-export default function ProductDemoPage() {
+const specs = [
+  { label: 'Neural Channels', value: '128+' },
+  { label: 'Data Throughput', value: '>100 Mbps' },
+  { label: 'Power Budget', value: '<1 W' },
+  { label: 'Clock Domains', value: 'Multiple' },
+  { label: 'Interface', value: 'Bidirectional' },
+  { label: 'Programmability', value: 'High-level language' },
+];
+
+export default function ProductPage() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-[60vh] text-center space-y-8 bg-surface-raised border border-white/5 rounded-xl p-12 relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-unc/20 to-transparent"></div>
-      <div className="absolute -bottom-32 -right-32 w-64 h-64 bg-unc/5 rounded-full blur-3xl"></div>
+    <div>
+      <section className="bg-white border-b border-gray-100">
+        <div className="max-w-5xl mx-auto px-6 py-16 md:py-20 text-center">
+          <p className="section-label mb-3">Technology</p>
+          <h1 className="font-serif text-4xl md:text-5xl text-gray-900 mb-4">BrainScan &amp; BrainCore</h1>
+          <p className="text-xl text-gray-500 max-w-2xl mx-auto">
+            The hardware and software platform for next-generation neural interfacing.
+          </p>
+        </div>
+      </section>
 
-      <div className="w-24 h-24 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center text-gray-600 relative z-10">
-        <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-        </svg>
-      </div>
+      <section className="max-w-5xl mx-auto px-6 py-16">
+        <div className="grid md:grid-cols-3 gap-12 mb-16">
+          <div className="md:col-span-1">
+            <p className="section-label mb-2">Hardware</p>
+            <h2 className="font-serif text-2xl text-gray-900">BrainCore Chip</h2>
+          </div>
+          <div className="md:col-span-2 space-y-4 text-gray-600 leading-relaxed">
+            <p>
+              BrainCore is a bespoke chip designed for neural interfacing that uses multiple hardware accelerators
+              for neural data processing, operating in distinct clock domains. It integrates peripheral off-the-shelf
+              components for storage, wireless communication, and power.
+            </p>
+            <p>
+              BrainCore enables energy efficiency that is orders of magnitude superior to the state of the art,
+              processing about a hundred megabits per second of neural data below 1 watt of power.
+            </p>
+          </div>
+        </div>
 
-      <div className="max-w-2xl mx-auto space-y-4 relative z-10">
-        <p className="font-mono text-xs text-unc/50 tracking-widest uppercase">// product</p>
-        <h1 className="text-4xl font-bold text-gray-100">Product Demo</h1>
-        <p className="text-lg text-gray-400 leading-relaxed">
-          The interactive demo for our BCI chip designs is currently in development.
-          Please check back later for updates as we progress through the project stages.
-        </p>
-      </div>
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+          {specs.map((s) => (
+            <div key={s.label} className="card p-6 text-center">
+              <div className="text-2xl font-bold text-unc font-mono mb-1">{s.value}</div>
+              <div className="text-sm text-gray-500">{s.label}</div>
+            </div>
+          ))}
+        </div>
+      </section>
 
-      <div className="flex gap-4 relative z-10">
-        <Link href="/" className="px-6 py-3 bg-white/5 border border-white/10 text-gray-400 rounded-lg hover:border-unc/30 hover:text-unc transition-all font-mono text-sm">
-          return_home
-        </Link>
-        <Link href="/research" className="px-6 py-3 bg-unc/10 text-unc border border-unc/20 rounded-lg hover:bg-unc/20 hover:border-unc/40 hover:shadow-glow-sm transition-all font-semibold text-sm">
-          View Research
-        </Link>
-      </div>
+      <section className="bg-gray-50 border-y border-gray-100">
+        <div className="max-w-5xl mx-auto px-6 py-16">
+          <div className="grid md:grid-cols-3 gap-12">
+            <div className="md:col-span-1">
+              <p className="section-label mb-2">Software</p>
+              <h2 className="font-serif text-2xl text-gray-900">Compiler &amp; Tools</h2>
+            </div>
+            <div className="md:col-span-2 space-y-4 text-gray-600 leading-relaxed">
+              <p>
+                Software design includes an intuitive interface in a high-level language familiar to neuroscientists
+                along with a compiler framework. BrainScan is designed to be the foundation for a standardized
+                computational platform for neural interface research and industry.
+              </p>
+              <p>
+                This will help neuroscientists and clinicians transcend the limitations of current neural interfaces
+                that support only narrow classes of experiments, and the fragmented software ecosystem they have led to.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="max-w-5xl mx-auto px-6 py-16 text-center">
+        <p className="text-gray-400 text-sm mb-4">Interactive demo coming soon</p>
+        <div className="flex justify-center gap-4">
+          <Link href="/why" className="btn-primary">
+            Learn More
+          </Link>
+          <Link href="/research" className="btn-outline">
+            View Research
+          </Link>
+        </div>
+      </section>
     </div>
   );
 }
