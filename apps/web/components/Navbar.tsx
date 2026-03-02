@@ -19,7 +19,7 @@ export function Navbar() {
                 BCI Project
               </span>
               <span className="text-[10px] font-semibold text-gray-400 tracking-widest uppercase mt-0.5">
-                By Raghav Lab
+                Infinite Brain Lab
               </span>
             </div>
           </div>

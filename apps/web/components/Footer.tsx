@@ -12,7 +12,7 @@ export function Footer() {
               </div>
               <div>
                 <h3 className="font-bold text-sm text-gray-900">BCI Project</h3>
-                <p className="text-[10px] text-gray-400 uppercase tracking-widest">By Raghav Lab</p>
+                <p className="text-[10px] text-gray-400 uppercase tracking-widest">Infinite Brain Lab</p>
               </div>
             </div>
             <p className="text-gray-500 text-sm leading-relaxed max-w-sm">
@@ -64,7 +64,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400">
-          <p>&copy; {new Date().getFullYear()} UNC BCI Project &middot; Raghav Lab. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} UNC BCI Project &middot; Infinite Brain Lab. All rights reserved.</p>
           <p className="mt-2 md:mt-0">University of North Carolina at Chapel Hill</p>
         </div>
       </div>

@@ -21,7 +21,7 @@ const dmSerif = DM_Serif_Display({
 
 export const metadata = {
   title: 'BrainScan | UNC BCI Project',
-  description: 'BrainScan: An Instrument for High-Bandwidth Real-Time Closed-Loop Neural Interfacing — by Raghav Lab at UNC Chapel Hill',
+  description: 'BrainScan: An Instrument for High-Bandwidth Real-Time Closed-Loop Neural Interfacing — Infinite Brain Lab at UNC Chapel Hill',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
