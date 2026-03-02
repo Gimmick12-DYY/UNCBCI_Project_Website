@@ -38,14 +38,14 @@ const researchGroups = [
 ];
 
 const universityPartners = [
-  { name: 'University of North Carolina', short: 'UNC', color: '#4B9CD3' },
-  { name: 'Princeton University', short: 'Princeton', color: '#E77500' },
-  { name: 'Yale University', short: 'Yale', color: '#00356B' },
-  { name: 'Stanford University', short: 'Stanford', color: '#8C1515' },
-  { name: 'University of Connecticut', short: 'UConn', color: '#000E2F' },
-  { name: 'University of Kentucky', short: 'UKY', color: '#0033A0' },
-  { name: 'Iowa State University', short: 'Iowa State', color: '#C8102E' },
-  { name: 'North Carolina A&T University', short: 'NC A&T', color: '#004684' },
+  { name: 'University of North Carolina', short: 'UNC', logo: '/logos/Interlocking_NC_CarolinaBlue_Navy_rgb.png' },
+  { name: 'Princeton University', short: 'Princeton', logo: '/logos/princeton.svg' },
+  { name: 'Yale University', short: 'Yale', logo: '/logos/yale.svg' },
+  { name: 'Stanford University', short: 'Stanford', logo: '/logos/stanford.svg' },
+  { name: 'University of Connecticut', short: 'UConn', logo: '/logos/uconn.svg' },
+  { name: 'University of Kentucky', short: 'UKY', logo: '/logos/kentucky.svg' },
+  { name: 'Iowa State University', short: 'Iowa State', logo: '/logos/iowa-state.svg' },
+  { name: 'North Carolina A&T University', short: 'NC A&T', logo: '/logos/ncat.svg' },
 ];
 
 const pis = [
@@ -111,15 +111,18 @@ export default function CollaboratorsPage() {
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             {universityPartners.map((u) => (
-              <div key={u.short} className="card p-5 text-center flex flex-col items-center">
-                <div
-                  className="w-14 h-14 rounded-full flex items-center justify-center mb-3 text-white font-bold text-xs"
-                  style={{ backgroundColor: u.color }}
-                >
-                  {u.short.length <= 4 ? u.short : u.short.split(' ')[0]}
+              <div key={u.short} className="card p-5 text-center flex flex-col items-center justify-between">
+                <div className="w-full h-16 flex items-center justify-center mb-3">
+                  <img
+                    src={u.logo}
+                    alt={`${u.name} logo`}
+                    className="max-h-16 max-w-[80%] object-contain"
+                  />
                 </div>
-                <div className="text-base font-bold text-gray-900 mb-1">{u.short}</div>
-                <div className="text-xs text-gray-500 leading-tight">{u.name}</div>
+                <div>
+                  <div className="text-base font-bold text-gray-900 mb-1">{u.short}</div>
+                  <div className="text-xs text-gray-500 leading-tight">{u.name}</div>
+                </div>
               </div>
             ))}
           </div>
