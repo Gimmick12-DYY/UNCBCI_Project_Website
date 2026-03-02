@@ -38,14 +38,14 @@ const researchGroups = [
 ];
 
 const universityPartners = [
-  { name: 'University of North Carolina', short: 'UNC' },
-  { name: 'Princeton University', short: 'Princeton' },
-  { name: 'Yale University', short: 'Yale' },
-  { name: 'Stanford University', short: 'Stanford' },
-  { name: 'University of Connecticut', short: 'UConn' },
-  { name: 'University of Kentucky', short: 'UKY' },
-  { name: 'Iowa State University', short: 'Iowa State' },
-  { name: 'North Carolina A&T University', short: 'NC A&T' },
+  { name: 'University of North Carolina', short: 'UNC', color: '#4B9CD3' },
+  { name: 'Princeton University', short: 'Princeton', color: '#E77500' },
+  { name: 'Yale University', short: 'Yale', color: '#00356B' },
+  { name: 'Stanford University', short: 'Stanford', color: '#8C1515' },
+  { name: 'University of Connecticut', short: 'UConn', color: '#000E2F' },
+  { name: 'University of Kentucky', short: 'UKY', color: '#0033A0' },
+  { name: 'Iowa State University', short: 'Iowa State', color: '#C8102E' },
+  { name: 'North Carolina A&T University', short: 'NC A&T', color: '#004684' },
 ];
 
 const pis = [
@@ -111,8 +111,14 @@ export default function CollaboratorsPage() {
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             {universityPartners.map((u) => (
-              <div key={u.short} className="card p-5 text-center">
-                <div className="text-lg font-bold text-gray-900 mb-1">{u.short}</div>
+              <div key={u.short} className="card p-5 text-center flex flex-col items-center">
+                <div
+                  className="w-14 h-14 rounded-full flex items-center justify-center mb-3 text-white font-bold text-xs"
+                  style={{ backgroundColor: u.color }}
+                >
+                  {u.short.length <= 4 ? u.short : u.short.split(' ')[0]}
+                </div>
+                <div className="text-base font-bold text-gray-900 mb-1">{u.short}</div>
                 <div className="text-xs text-gray-500 leading-tight">{u.name}</div>
               </div>
             ))}
