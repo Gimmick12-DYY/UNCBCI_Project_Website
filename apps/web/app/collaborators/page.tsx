@@ -39,9 +39,9 @@ const researchGroups = [
 
 const universityPartners = [
   { name: 'University of North Carolina', short: 'UNC', logo: '/logos/Interlocking_NC_CarolinaBlue_Navy_rgb.png' },
-  { name: 'Princeton University', short: 'Princeton', logo: '/logos/princeton.svg' },
-  { name: 'Yale University', short: 'Yale', logo: '/logos/yale.svg' },
-  { name: 'Stanford University', short: 'Stanford', logo: '/logos/stanford.svg' },
+  { name: 'Princeton University', short: 'Princeton', logo: '/logos/princeton.svg', scale: 2.6 },
+  { name: 'Yale University', short: 'Yale', logo: '/logos/yale.svg', scale: 1.8 },
+  { name: 'Stanford University', short: 'Stanford', logo: '/logos/stanford.svg', scale: 2 },
   { name: 'University of Connecticut', short: 'UConn', logo: '/logos/uconn.svg' },
   { name: 'University of Kentucky', short: 'UKY', logo: '/logos/kentucky.svg' },
   { name: 'Iowa State University', short: 'Iowa State', logo: '/logos/iowa-state.svg' },
@@ -112,11 +112,12 @@ export default function CollaboratorsPage() {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             {universityPartners.map((u) => (
               <div key={u.short} className="card p-5 text-center flex flex-col items-center justify-between">
-                <div className="w-full h-16 flex items-center justify-center mb-3">
+                <div className="w-full h-16 flex items-center justify-center mb-3 overflow-hidden">
                   <img
                     src={u.logo}
                     alt={`${u.name} logo`}
                     className="max-h-16 max-w-[80%] object-contain"
+                    style={u.scale ? { transform: `scale(${u.scale})` } : undefined}
                   />
                 </div>
                 <div>
