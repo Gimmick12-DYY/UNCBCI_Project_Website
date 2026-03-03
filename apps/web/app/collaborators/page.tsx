@@ -49,10 +49,10 @@ const universityPartners = [
 ];
 
 const pis = [
+  { name: 'Raghavendra Pradyumna Pothukuchi', role: 'PI', institution: 'UNC Chapel Hill' },
   { name: 'Abhishek Bhattacharjee', role: 'PI', institution: 'Yale University' },
-  { name: 'Rajit Manohar', role: 'Co-PI', institution: 'Yale University' },
-  { name: 'Hitten Zaveri', role: 'Co-PI', institution: 'Yale University' },
-  { name: 'Raghavendra Pradyumna Pothukuchi', role: 'Co-PI', institution: 'UNC Chapel Hill' },
+  { name: 'Rajit Manohar', role: 'PI', institution: 'Yale University' },
+  { name: 'Hitten Zaveri', role: 'PI', institution: 'Yale University' },
 ];
 
 export default function CollaboratorsPage() {
