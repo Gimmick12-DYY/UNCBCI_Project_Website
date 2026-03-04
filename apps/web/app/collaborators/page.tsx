@@ -6,14 +6,7 @@ export const metadata = {
   description: 'The BrainScan ecosystem: research groups and university partners.',
 };
 
-const researchGroups = [
-  {
-    name: 'The Infinite Brain Research Group',
-    pi: 'Raghavendra Pradyumna Pothukuchi',
-    institution: 'University of North Carolina at Chapel Hill',
-    url: 'https://www.cs.unc.edu/~raghav/',
-    description: 'Building computers that can directly talk to the brain, and think like the mind. The lab develops BCI processors, cognitive modeling platforms, and brain-inspired computing systems.',
-  },
+const neuroscienceGroups = [
   {
     name: 'Brain-Spine-Machine Interfaces Lab',
     pi: 'Yadav Lab',
@@ -27,6 +20,16 @@ const researchGroups = [
     institution: '',
     url: '',
     description: 'Investigating neural circuits underlying skilled motor behaviors.',
+  },
+];
+
+const computerEngGroups = [
+  {
+    name: 'The Infinite Brain Research Group',
+    pi: 'Raghavendra Pradyumna Pothukuchi',
+    institution: 'University of North Carolina at Chapel Hill',
+    url: 'https://www.cs.unc.edu/~raghav/',
+    description: 'Building computers that can directly talk to the brain, and think like the mind. The lab develops BCI processors, cognitive modeling platforms, and brain-inspired computing systems.',
   },
   {
     name: 'Krishna Lab',
@@ -55,6 +58,30 @@ const pis = [
   { name: 'Hitten Zaveri', role: 'PI', institution: 'Yale University' },
 ];
 
+function GroupCard({ group: g }: { group: { name: string; pi: string; institution: string; url: string; description: string } }) {
+  return (
+    <div className="card p-6">
+      <h3 className="text-lg font-bold text-gray-900 mb-1">{g.name}</h3>
+      <p className="text-sm text-unc font-semibold mb-1">{g.pi}</p>
+      {g.institution && <p className="text-xs text-gray-400 mb-3">{g.institution}</p>}
+      <p className="text-sm text-gray-500 leading-relaxed mb-3">{g.description}</p>
+      {g.url && (
+        <a
+          href={g.url}
+          target="_blank"
+          rel="noreferrer"
+          className="text-unc font-medium text-sm hover:text-unc-dark inline-flex items-center gap-1 group"
+        >
+          Visit lab page
+          <svg className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+        </a>
+      )}
+    </div>
+  );
+}
+
 export default function CollaboratorsPage() {
   return (
     <div>
@@ -71,28 +98,19 @@ export default function CollaboratorsPage() {
 
       {/* Research Groups */}
       <section className="max-w-5xl mx-auto px-6 py-16">
-        <p className="section-label mb-6">Research Groups</p>
+        <p className="section-label mb-8">Research Groups</p>
+
+        <h2 className="font-serif text-2xl text-gray-900 mb-5">Neuroscience</h2>
+        <div className="grid sm:grid-cols-2 gap-6 mb-12">
+          {neuroscienceGroups.map((g) => (
+            <GroupCard key={g.name} group={g} />
+          ))}
+        </div>
+
+        <h2 className="font-serif text-2xl text-gray-900 mb-5">Computer Engineering</h2>
         <div className="grid sm:grid-cols-2 gap-6">
-          {researchGroups.map((g) => (
-            <div key={g.name} className="card p-6">
-              <h3 className="text-lg font-bold text-gray-900 mb-1">{g.name}</h3>
-              <p className="text-sm text-unc font-semibold mb-1">{g.pi}</p>
-              {g.institution && <p className="text-xs text-gray-400 mb-3">{g.institution}</p>}
-              <p className="text-sm text-gray-500 leading-relaxed mb-3">{g.description}</p>
-              {g.url && (
-                <a
-                  href={g.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-unc font-medium text-sm hover:text-unc-dark inline-flex items-center gap-1 group"
-                >
-                  Visit lab page
-                  <svg className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                </a>
-              )}
-            </div>
+          {computerEngGroups.map((g) => (
+            <GroupCard key={g.name} group={g} />
           ))}
         </div>
       </section>

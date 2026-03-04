@@ -43,7 +43,7 @@ export function Hero() {
 
         <div className="grid grid-cols-2 gap-4">
           <ImageCard
-            label="Neural Imaging"
+            label="Neural Interfacing"
             gradient="bg-gradient-to-br from-slate-600 to-slate-800"
           />
           <ImageCard
@@ -55,7 +55,7 @@ export function Hero() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
               <div className="absolute top-3 right-3 w-2.5 h-2.5 rounded-full bg-emerald-400 shadow-sm shadow-emerald-400/50"></div>
               <div className="absolute bottom-4 left-4">
-                <span className="text-white text-sm font-medium">Signal Processing</span>
+                <span className="text-white text-sm font-medium">Data Processing</span>
               </div>
               <div className="absolute bottom-4 right-4 flex items-center gap-2">
                 <span className="flex items-center gap-1 text-white/70 text-xs">

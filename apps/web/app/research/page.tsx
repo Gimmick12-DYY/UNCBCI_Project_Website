@@ -20,7 +20,7 @@ export default function ResearchPage() {
           <p className="section-label mb-3">Publications</p>
           <h1 className="font-serif text-4xl md:text-5xl text-gray-900 mb-4">Research</h1>
           <p className="text-xl text-gray-500 max-w-2xl mx-auto">
-            Our team publishes cutting-edge research in neural engineering, computer architecture, and signal processing.
+            Our team publishes cutting-edge research in neural engineering, computer architecture, and data processing.
           </p>
         </div>
       </section>
