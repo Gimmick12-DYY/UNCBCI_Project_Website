@@ -13,11 +13,11 @@ export function PersonCard({ name, bio, photoUrl, role, affiliation }: {
 
   return (
     <div
-      className="card overflow-hidden group relative h-[22rem]"
+      className="card overflow-hidden group relative h-96"
       onMouseEnter={() => setShowBio(true)}
       onMouseLeave={() => setShowBio(false)}
     >
-      <div className="relative h-56 bg-gradient-to-br from-gray-100 to-gray-200">
+      <div className="relative h-64 bg-gradient-to-br from-gray-100 to-gray-200">
         {photoUrl ? (
           <img src={photoUrl} alt={name} className="w-full h-full object-cover" />
         ) : (
