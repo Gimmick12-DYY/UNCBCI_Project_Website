@@ -19,7 +19,7 @@ export function PersonCard({ name, bio, photoUrl, role, affiliation }: {
     >
       <div className="relative h-48 bg-gradient-to-br from-gray-100 to-gray-200">
         {photoUrl ? (
-          <img src={photoUrl} alt={name} className="w-full h-full object-cover object-[center_25%]" />
+          <img src={photoUrl} alt={name} className="w-full h-full object-cover" style={{ objectPosition: 'center 20%' }} />
         ) : (
           <div className="flex items-center justify-center h-full text-gray-300">
             <svg className="w-16 h-16" fill="currentColor" viewBox="0 0 24 24">
