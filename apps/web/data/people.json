@@ -1,42 +1,91 @@
 [
   {
-    "id": "raghav-1",
-    "name": "Prof. Raghav",
-    "role": "PI",
-    "bio": "Leads the UNC BCI project.",
-    "photoUrl": "/people/raghav.jpg",
-    "affiliation": "UNC"
-  },
-  {
-    "id": "collab-1",
-    "name": "Alex Chen",
-    "role": "Collaborator",
-    "bio": "Collaborating engineer on hardware integration.",
-    "photoUrl": "/people/alex.jpg",
-    "affiliation": "UNC"
-  },
-  {
-    "id": "phd-1",
-    "name": "Priya Kumar",
-    "role": "PhD",
-    "bio": "Works on neural decoding algorithms.",
-    "photoUrl": "/people/priya.jpg",
-    "affiliation": "UNC"
-  },
-  {
-    "id": "grad-1",
-    "name": "Sam Lee",
+    "id": "anudeep-deekonda",
+    "name": "Anudeep Deekonda",
     "role": "Graduate",
-    "bio": "Focus on data processing pipeline.",
-    "photoUrl": "/people/sam.jpg",
+    "bio": "An Electrical Engineering graduate from USC specializing in ASIC/Digital Design and Low-Power Computer Architecture. Currently serving as a BCI Processor Design Intern under Prof. Raghav's research group, where I manage the RTL to GDSII Physical Design flow and optimize neural decoding algorithms for hardware integration.",
+    "photoUrl": "/people/anudeep-deekonda.jpg",
     "affiliation": "UNC"
   },
   {
-    "id": "ug-1",
-    "name": "Taylor Smith",
+    "id": "saidatha-kasani",
+    "name": "Saidatha Kasani",
+    "preferredName": "Sai",
     "role": "Undergraduate",
-    "bio": "Assists with data collection.",
-    "photoUrl": "/people/taylor.jpg",
+    "bio": "Double major in Computer Science and Business with a minor in math. Powerlifting world champion, training to be a Red Bull stuntman, and plays the guitar.",
+    "photoUrl": "/people/saidatha-kasani.jpg",
+    "affiliation": "UNC"
+  },
+  {
+    "id": "rathishsai-surineni",
+    "name": "Rathishsai Surineni",
+    "role": "Undergraduate",
+    "bio": "Neuroscience major and sophomore. Interested in computer-based applications of neuroscience, specifically the role of the vagus nerve in epilepsy.",
+    "photoUrl": "/people/rathishsai-surineni.jpg",
+    "affiliation": "UNC"
+  },
+  {
+    "id": "anish-sharma",
+    "name": "Anish Sharma",
+    "role": "Undergraduate",
+    "bio": "Computer Science and Mathematics sophomore, interested in all applications of technology.",
+    "photoUrl": "/people/anish-sharma.jpg",
+    "affiliation": "UNC"
+  },
+  {
+    "id": "jason-li",
+    "name": "Jason Li",
+    "role": "Undergraduate",
+    "bio": "Second year computer science major looking to gain experience in a team environment and with verification systems.",
+    "photoUrl": "/people/jason-li.jpg",
+    "affiliation": "UNC"
+  },
+  {
+    "id": "jingyi-fan",
+    "name": "Jingyi Fan",
+    "role": "Undergraduate",
+    "bio": "Freshman double majoring in Computer Science and Mathematics. Interested in embedded systems and brain-computer interfaces, particularly in how computing systems can interact with neural signals and real-world devices.",
+    "photoUrl": "/people/jingyi-fan.jpg",
+    "affiliation": "UNC"
+  },
+  {
+    "id": "brenton-lian",
+    "name": "Brenton Lian",
+    "role": "Undergraduate",
+    "bio": "Computer Science and Data Science double major, history minor. Primary research in cybersecurity with previous experience and interest in human-computer interaction and health-related applications of computer science.",
+    "photoUrl": "/people/brenton-lian.jpg",
+    "affiliation": "UNC"
+  },
+  {
+    "id": "ye-mon-thant",
+    "name": "Ye Mon Thant",
+    "role": "Undergraduate",
+    "bio": "Senior studying Computer Science at UNC. Passionate about efficiency and volunteering on the systems engineering side of the BCI project.",
+    "photoUrl": "/people/ye-mon-thant.jpg",
+    "affiliation": "UNC"
+  },
+  {
+    "id": "david-li",
+    "name": "David Li",
+    "role": "Undergraduate",
+    "bio": "Sophomore studying computer science and mathematics. Interested in low-level development and infrastructure.",
+    "photoUrl": "/people/david-li.jpg",
+    "affiliation": "UNC"
+  },
+  {
+    "id": "ethan-bonsall",
+    "name": "Ethan Bonsall",
+    "role": "Undergraduate",
+    "bio": "Junior studying Computer Science and Data Science, with an interest in research that has a direct path to helping people and creating practical real-world impact.",
+    "photoUrl": "/people/ethan-bonsall.jpg",
+    "affiliation": "UNC"
+  },
+  {
+    "id": "douglas-parker",
+    "name": "Douglas Parker",
+    "role": "Undergraduate",
+    "bio": "Second year student studying Computer Science and Data Science. Research interests in open source hardware design, machine learning, and local compute.",
+    "photoUrl": "/people/douglas-parker.jpg",
     "affiliation": "UNC"
   }
 ]
