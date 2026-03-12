@@ -4,7 +4,7 @@ import React from 'react';
 import { Inter, JetBrains_Mono, DM_Serif_Display } from 'next/font/google';
 
 /*
- * Typography — all loaded via next/font/google
+ * Typography — all loaded via next/font/google (Open Source, no licensing issues, optimized for performance)
  *
  *   Sans  (body text):   Inter              → CSS var --font-inter    → Tailwind: font-sans
  *   Serif (headings):    DM Serif Display   → CSS var --font-dm-serif → Tailwind: font-serif

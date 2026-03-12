@@ -25,6 +25,10 @@ export default function AdminPage() {
   const [status, setStatus] = useState<'draft' | 'published'>('published');
   const [selectedPeopleIds, setSelectedPeopleIds] = useState<string[]>([]);
 
+
+  // Need Verification layer to ensure only authorized users can access this page
+  // Use Clerk to implement this
+  // Need to consider verification using UNC shell / Depolyment issues and maintainence issues
   useEffect(() => {
     Promise.all([
       fetch('/api/news?all=true').then(r => r.json()),
