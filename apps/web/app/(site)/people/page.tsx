@@ -6,6 +6,8 @@ type Person = {
   id: string;
   name: string;
   role: string;
+  projectRole?: string;
+  major?: string;
   bio: string;
   photoUrl?: string;
   affiliation?: string;

@@ -25,13 +25,6 @@ const neuroscienceGroups = [
 
 const computerEngGroups = [
   {
-    name: 'The Infinite Brain Research Group',
-    pi: 'Raghavendra Pradyumna Pothukuchi',
-    institution: 'University of North Carolina at Chapel Hill',
-    url: 'https://www.cs.unc.edu/~raghav/',
-    description: 'Building computers that can directly talk to the brain, and think like the mind. The lab develops BCI processors, cognitive modeling platforms, and brain-inspired computing systems.',
-  },
-  {
     name: 'Krishna Lab',
     pi: 'Krishna Lab',
     institution: '',
@@ -54,7 +47,6 @@ const universityPartners = [
 const pis = [
   { name: 'Raghavendra Pradyumna Pothukuchi', role: 'PI', institution: 'UNC Chapel Hill' },
   { name: 'Abhishek Bhattacharjee', role: 'PI', institution: 'Yale University' },
-  { name: 'Rajit Manohar', role: 'PI', institution: 'Yale University' },
   { name: 'Hitten Zaveri', role: 'PI', institution: 'Yale University' },
 ];
 
@@ -142,30 +134,6 @@ export default function CollaboratorsPage() {
                   <div className="text-base font-bold text-gray-900 mb-1">{u.short}</div>
                   <div className="text-xs text-gray-500 leading-tight">{u.name}</div>
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Principal Investigators */}
-      <section className="bg-white border-y border-gray-100">
-        <div className="max-w-5xl mx-auto px-6 py-16">
-          <div className="text-center mb-10">
-            <p className="section-label mb-2">NSF Grant #2510152</p>
-            <h2 className="font-serif text-3xl text-gray-900">Principal Investigators</h2>
-          </div>
-          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
-            {pis.map((p) => (
-              <div key={p.name} className="text-center">
-                <div className="w-16 h-16 rounded-full bg-gray-100 mx-auto mb-3 flex items-center justify-center text-gray-400">
-                  <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-                  </svg>
-                </div>
-                <h3 className="font-bold text-gray-900 text-sm">{p.name}</h3>
-                <p className="text-xs text-unc font-semibold">{p.role}</p>
-                <p className="text-xs text-gray-400 mt-0.5">{p.institution}</p>
               </div>
             ))}
           </div>
