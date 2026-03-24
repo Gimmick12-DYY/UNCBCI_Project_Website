@@ -6,8 +6,9 @@ import Link from 'next/link';
 const navLinks = [
   { href: '/why', label: 'Why BrainScan' },
   { href: '/research', label: 'Research' },
-  { href: '/collaborators', label: 'Collaborators' },
   { href: '/people', label: 'People' },
+  { href: '/collaborators', label: 'Collaborators' },
+  { href: '/pis', label: "PI's" },
 ];
 
 export function Navbar() {

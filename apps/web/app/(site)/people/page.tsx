@@ -13,6 +13,14 @@ type Person = {
   affiliation?: string;
 };
 
+function AffiliationHeading({ children }: { children: React.ReactNode }) {
+  return (
+    <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-500 mb-4 mt-8 first:mt-0">
+      {children}
+    </h3>
+  );
+}
+
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   if (React.Children.count(children) === 0) return null;
 
@@ -36,6 +44,8 @@ export default function PeoplePage() {
   const collaborators = people.filter(p => p.role === 'Collaborator');
   const phd = people.filter(p => p.role === 'PhD');
   const graduates = people.filter(p => p.role === 'Graduate');
+  const uncGrads = graduates.filter(p => !p.affiliation || p.affiliation === 'UNC');
+  const princetonGrads = graduates.filter(p => p.affiliation === 'Princeton');
   const undergraduates = people.filter(p => p.role === 'Undergraduate');
 
   return (
@@ -60,9 +70,33 @@ export default function PeoplePage() {
         <Section title="PhD Students">
           {phd.map(p => <PersonCard key={p.id} {...p} />)}
         </Section>
-        <Section title="Graduate Students">
-          {graduates.map(p => <PersonCard key={p.id} {...p} />)}
-        </Section>
+        {(uncGrads.length > 0 || princetonGrads.length > 0) && (
+          <section className="py-8 border-b border-gray-100 last:border-0">
+            <h2 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+              <span className="w-1 h-6 bg-unc rounded-full"></span>
+              Graduate Students
+            </h2>
+            {uncGrads.length > 0 && (
+              <>
+                <AffiliationHeading>UNC</AffiliationHeading>
+                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                  {uncGrads.map(p => <PersonCard key={p.id} {...p} />)}
+                </div>
+              </>
+            )}
+            {princetonGrads.length > 0 && (
+              <>
+                <AffiliationHeading>Princeton</AffiliationHeading>
+                <p className="text-sm text-gray-500 mb-4 max-w-2xl">
+                  Additional Princeton graduate students will be listed here as they join.
+                </p>
+                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                  {princetonGrads.map(p => <PersonCard key={p.id} {...p} />)}
+                </div>
+              </>
+            )}
+          </section>
+        )}
         <Section title="Undergraduate Students">
           {undergraduates.map(p => <PersonCard key={p.id} {...p} />)}
         </Section>
