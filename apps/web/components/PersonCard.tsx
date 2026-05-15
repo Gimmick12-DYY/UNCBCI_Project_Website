@@ -2,8 +2,16 @@
 
 import React, { useState } from 'react';
 
-export function PersonCard({ name, bio, photoUrl, role, projectRole, major, affiliation }: {
+function displayName(name: string, preferredName?: string) {
+  if (!preferredName) return name;
+  const parts = name.trim().split(/\s+/);
+  const lastName = parts.length > 1 ? parts[parts.length - 1] : '';
+  return lastName ? `${preferredName} ${lastName}` : preferredName;
+}
+
+export function PersonCard({ name, preferredName, bio, photoUrl, role, projectRole, major, affiliation }: {
   name: string;
+  preferredName?: string;
   bio: string;
   photoUrl?: string;
   role?: string;
@@ -12,6 +20,7 @@ export function PersonCard({ name, bio, photoUrl, role, projectRole, major, affi
   affiliation?: string;
 }) {
   const [showBio, setShowBio] = useState(false);
+  const shownName = displayName(name, preferredName);
 
   return (
     <div
@@ -21,7 +30,7 @@ export function PersonCard({ name, bio, photoUrl, role, projectRole, major, affi
     >
       <div className="relative h-64 bg-gradient-to-br from-gray-100 to-gray-200">
         {photoUrl ? (
-          <img src={photoUrl} alt={name} className="w-full h-full object-cover" />
+          <img src={photoUrl} alt={shownName} className="w-full h-full object-cover" />
         ) : (
           <div className="flex items-center justify-center h-full text-gray-300">
             <svg className="w-16 h-16" fill="currentColor" viewBox="0 0 24 24">
@@ -32,7 +41,7 @@ export function PersonCard({ name, bio, photoUrl, role, projectRole, major, affi
       </div>
 
       <div className="p-4">
-        <h3 className="text-base font-bold text-gray-900 group-hover:text-unc-dark transition-colors leading-tight">{name}</h3>
+        <h3 className="text-base font-bold text-gray-900 group-hover:text-unc-dark transition-colors leading-tight">{shownName}</h3>
         {projectRole && <div className="text-xs font-semibold text-unc uppercase tracking-wider mt-1">{projectRole}</div>}
         {affiliation && <div className="text-xs text-gray-400 mt-0.5">{affiliation}</div>}
       </div>
@@ -43,7 +52,7 @@ export function PersonCard({ name, bio, photoUrl, role, projectRole, major, affi
             showBio ? 'opacity-100' : 'opacity-0 pointer-events-none'
           }`}
         >
-          <h3 className="text-base font-bold text-gray-900 mb-1">{name}</h3>
+          <h3 className="text-base font-bold text-gray-900 mb-1">{shownName}</h3>
           {major && <div className="text-xs font-semibold text-unc uppercase tracking-wider mb-3">{major}</div>}
           <p className="text-gray-600 text-sm leading-relaxed">{bio}</p>
         </div>

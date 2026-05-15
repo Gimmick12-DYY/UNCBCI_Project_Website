@@ -5,6 +5,7 @@ import { PersonCard } from '../../../components';
 type Person = {
   id: string;
   name: string;
+  preferredName?: string;
   role: string;
   projectRole?: string;
   major?: string;

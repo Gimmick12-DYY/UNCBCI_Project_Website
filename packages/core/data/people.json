@@ -26,7 +26,7 @@
     "role": "Undergraduate",
     "projectRole": "TBD",
     "major": "Computer Science & Business",
-    "bio": "Double major in Computer Science and Business with a minor in math. Powerlifting world champion, training to be a Red Bull stuntman, and plays the guitar.",
+    "bio": "Hey, my name is Sai! I'm a double major in Computer Science and Business with a minor in math. Some cool things about me are that I'm a powerlifting world champion, I'm training to be a Red Bull stuntman, and I play the guitar!",
     "photoUrl": "/people/saidatha-kasani.jpg",
     "affiliation": "UNC"
   },
@@ -36,7 +36,7 @@
     "role": "Undergraduate",
     "projectRole": "TBD",
     "major": "Neuroscience",
-    "bio": "Neuroscience major and sophomore. Interested in computer-based applications of neuroscience, specifically the role of the vagus nerve in epilepsy.",
+    "bio": "I am a Neuroscience Major and a sophomore/second year. Broadly, I am interested in computer-based applications of neuroscience, but specifically, I am interested in the role of the vagus nerve in epilepsy.",
     "photoUrl": "/people/rathishsai-surineni.jpg",
     "affiliation": "UNC"
   },
@@ -46,7 +46,7 @@
     "role": "Undergraduate",
     "projectRole": "TBD",
     "major": "Computer Science & Mathematics",
-    "bio": "Computer Science and Mathematics sophomore, interested in all applications of technology.",
+    "bio": "Computer Science and Mathematics sophomore, interested in all applications of technology. Loves to play basketball and go to the gym.",
     "photoUrl": "/people/anish-sharma.jpg",
     "affiliation": "UNC"
   },
@@ -56,7 +56,7 @@
     "role": "Undergraduate",
     "projectRole": "Verification",
     "major": "Computer Science",
-    "bio": "Second year computer science major looking to gain experience in a team environment and with verification systems.",
+    "bio": "I am a second year computer science major. I want to gain experience in a team environment and with verification systems.",
     "photoUrl": "/people/jason-li.jpg",
     "affiliation": "UNC"
   },
@@ -66,7 +66,7 @@
     "role": "Undergraduate",
     "projectRole": "Embedded Systems",
     "major": "Computer Science & Mathematics",
-    "bio": "Freshman double majoring in Computer Science and Mathematics. Interested in embedded systems and brain-computer interfaces, particularly in how computing systems can interact with neural signals and real-world devices.",
+    "bio": "I am a freshman double majoring in Computer Science and Mathematics. I am interested in embedded systems and brain–computer interfaces, particularly in how computing systems can interact with neural signals and real-world devices.",
     "photoUrl": "/people/jingyi-fan.jpg",
     "affiliation": "UNC"
   },
@@ -76,7 +76,7 @@
     "role": "Undergraduate",
     "projectRole": "TBD",
     "major": "Computer Science & Data Science",
-    "bio": "Computer Science and Data Science double major, history minor. Primary research in cybersecurity with previous experience and interest in human-computer interaction and health-related applications of computer science.",
+    "bio": "Computer Science and Data Science double major, history minor. Primary research is in cybersecurity but previous experience and interest in human computer interaction work and health related applications of computer science.",
     "photoUrl": "/people/brenton-lian.jpg",
     "affiliation": "UNC"
   },
@@ -86,7 +86,7 @@
     "role": "Undergraduate",
     "projectRole": "Systems Engineering",
     "major": "Computer Science",
-    "bio": "Senior studying Computer Science at UNC. Passionate about efficiency and volunteering on the systems engineering side of the BCI project.",
+    "bio": "I'm Ye Mon, a senior studying Computer Science at UNC. I'm passionate about efficiency and will be volunteering on the systems engineering side of this BCI project.",
     "photoUrl": "",
     "affiliation": "UNC"
   },
@@ -96,7 +96,7 @@
     "role": "Undergraduate",
     "projectRole": "TBD",
     "major": "Computer Science & Mathematics",
-    "bio": "Sophomore studying computer science and mathematics. Interested in low-level development and infrastructure.",
+    "bio": "Hi! I'm David, a sophomore at UNC studying computer science and mathematics. I'm interested in low level development and infrastructure. In my free time, I like to play tennis and ping pong.",
     "photoUrl": "/people/david-li.jpg",
     "affiliation": "UNC"
   },
@@ -116,8 +116,59 @@
     "role": "Undergraduate",
     "projectRole": "TBD",
     "major": "Computer Science & Data Science",
-    "bio": "Second year student studying Computer Science and Data Science. Research interests in open source hardware design, machine learning, and local compute.",
+    "bio": "I am a second year student studying Computer Science and Data Science. My research interests lie in open source hardware design, machine learning, and local compute.",
     "photoUrl": "/people/douglas-parker.jpg",
+    "affiliation": "UNC"
+  },
+  {
+    "id": "xiao-tan",
+    "name": "Xiao Tan",
+    "role": "Undergraduate",
+    "projectRole": "TBD",
+    "major": "Computer Science",
+    "bio": "Junior at UNC Chapel Hill interested in hardware security, computer architecture, low-level systems, and logic/verification.",
+    "photoUrl": "/people/xiao-tan.jpg",
+    "affiliation": "UNC"
+  },
+  {
+    "id": "vihan-patil",
+    "name": "Vihan Patil",
+    "role": "Undergraduate",
+    "projectRole": "TBD",
+    "major": "Computer Science & Mathematics",
+    "bio": "Hi! I am a student at UNC studying CS and Math interested in the intersection of low-level embedded systems programming and machine learning.",
+    "photoUrl": "/people/vihan-patil.jpg",
+    "affiliation": "UNC"
+  },
+  {
+    "id": "noah-stiggins",
+    "name": "Noah Stiggins",
+    "role": "Undergraduate",
+    "projectRole": "TBD",
+    "major": "Computer Science & Business Administration",
+    "bio": "Hello! I am a freshman pursuing a double major in Computer Science B.S. and Business Administration B.S.B.A. My primary interest is in Cybersecurity and the way that we interact with the internet in our daily lives.",
+    "photoUrl": "/people/noah-stiggins.jpg",
+    "affiliation": "UNC"
+  },
+  {
+    "id": "xinyue-yang",
+    "name": "Xinyue Yang",
+    "preferredName": "Alice",
+    "role": "Undergraduate",
+    "projectRole": "Embedded Systems",
+    "major": "Computer Science & Statistics",
+    "bio": "Xinyue is a sophomore at UNC–Chapel Hill majoring in Computer Science and Statistics. She is a member of the Embedded Team, with research interests in embedded systems and full-stack development.",
+    "photoUrl": "/people/xinyue-yang.jpg",
+    "affiliation": "UNC"
+  },
+  {
+    "id": "sanya-saqib",
+    "name": "Sanya Saqib",
+    "role": "Undergraduate",
+    "projectRole": "Software Engineering",
+    "major": "Computer Science",
+    "bio": "I am a freshman majoring in Computer Science with minors in Business Administration and Arabic, working on the Software Engineering team for the project. I'm interested in building impactful, human-centered technologies, and outside of academics, I enjoy photography and watching Formula 1!",
+    "photoUrl": "/people/sanya-saqib.jpg",
     "affiliation": "UNC"
   }
 ]
