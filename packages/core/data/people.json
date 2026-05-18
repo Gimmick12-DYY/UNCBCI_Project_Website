@@ -1,5 +1,15 @@
 [
   {
+    "id": "martim-gaspar",
+    "name": "Martim S. Gaspar",
+    "role": "PhD",
+    "projectRole": "BCI Hardware",
+    "major": "Computer Science, PhD",
+    "bio": "I am a PhD student at UNC-Chapel Hill focused on brain-computer interface hardware. I am interested in custom ASIC design for neural recording systems, particularly in building near-probe signal processing architectures that interface directly with high-density electrode arrays.",
+    "photoUrl": "/people/martim-gaspar.jpg",
+    "affiliation": "UNC"
+  },
+  {
     "id": "anudeep-deekonda",
     "name": "Anudeep Deekonda",
     "role": "Graduate",
