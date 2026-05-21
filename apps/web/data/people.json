@@ -10,6 +10,26 @@
     "affiliation": "UNC"
   },
   {
+    "id": "eric-wu",
+    "name": "Eric Wu",
+    "role": "PhD",
+    "projectRole": "BCI Hardware",
+    "major": "Computer Science, PhD",
+    "bio": "I am a second-year PhD student in Computer Science. My research focuses on hardware design for brain-computer interfaces (BCIs), with an emphasis on custom chip architectures. My broader interests include embedded systems, real-time systems, and signal processing.",
+    "photoUrl": "/people/eric-wu.jpg",
+    "affiliation": "UNC"
+  },
+  {
+    "id": "erik-jessen",
+    "name": "Erik Jessen",
+    "role": "PhD",
+    "projectRole": "CI/CD & Systems",
+    "major": "Computer Science, PhD",
+    "bio": "I am a PhD student at UNC-Chapel Hill. I'm interested in creating an open-source CI/CD flow for multi-processor, low power designs that complies with FDA Class-3 and cybersecurity requirements.",
+    "photoUrl": "/people/erik-jessen.jpg",
+    "affiliation": "UNC"
+  },
+  {
     "id": "anudeep-deekonda",
     "name": "Anudeep Deekonda",
     "role": "Graduate",
