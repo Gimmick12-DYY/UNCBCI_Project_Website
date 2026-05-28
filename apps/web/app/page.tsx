@@ -84,7 +84,7 @@ export default async function Page() {
           <div className="grid sm:grid-cols-3 gap-8">
             {[
               { name: 'Raghavendra Pradyumna Pothukuchi', role: 'PI', institution: 'UNC Chapel Hill' },
-              { name: 'Abhishek Bhattacharjee', role: 'PI', institution: 'Yale University' },
+              { name: 'Abhishek Bhattacharjee', role: 'PI', institution: 'Princeton University' },
               { name: 'Hitten Zaveri', role: 'PI', institution: 'Yale University' },
             ].map((p) => (
               <div key={p.name} className="text-center">

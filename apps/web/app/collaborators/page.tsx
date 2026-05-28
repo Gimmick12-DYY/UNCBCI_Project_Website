@@ -46,7 +46,7 @@ const universityPartners = [
 
 const pis = [
   { name: 'Raghavendra Pradyumna Pothukuchi', role: 'PI', institution: 'UNC Chapel Hill' },
-  { name: 'Abhishek Bhattacharjee', role: 'PI', institution: 'Yale University' },
+  { name: 'Abhishek Bhattacharjee', role: 'PI', institution: 'Princeton University' },
   { name: 'Hitten Zaveri', role: 'PI', institution: 'Yale University' },
 ];
 
