@@ -36,7 +36,7 @@ const computerEngGroups = [
 const universityPartners = [
   { name: 'University of North Carolina', short: 'UNC', logo: '/logos/Interlocking_NC_CarolinaBlue_Navy_rgb.png' },
   { name: 'Princeton University', short: 'Princeton', logo: '/logos/princeton.svg', scale: 2.6 },
-  { name: 'Yale University', short: 'Yale', logo: '/logos/yale.svg', scale: 1.8 },
+  { name: 'Yale University', short: 'Yale', logo: '/logos/yale.svg', scale: 0.85 },
   { name: 'Stanford University', short: 'Stanford', logo: '/logos/stanford.svg', scale: 2 },
   { name: 'University of Connecticut', short: 'UConn', logo: '/logos/uconn.svg' },
   { name: 'University of Kentucky', short: 'UKY', logo: '/logos/kentucky.svg' },
