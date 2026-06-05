@@ -4,3 +4,4 @@ export { Card } from './Card';
 export { PersonCard } from './PersonCard';
 export { PartnerFlipCard } from './PartnerFlipCard';
 export { Hero } from './Hero';
+export { CapabilityGrid } from './CapabilityGrid';

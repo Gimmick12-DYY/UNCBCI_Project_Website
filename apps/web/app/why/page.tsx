@@ -1,33 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
+import { CapabilityGrid } from '../../components/CapabilityGrid';
 
 export const metadata = {
   title: 'About BrainScan | BrainScan',
   description: 'BrainScan: An Instrument for High-Bandwidth Real-Time Closed-Loop Neural Interfacing, funded by NSF MRI Grant #2510152.',
 };
-
-const keyFeatures = [
-  {
-    title: 'Unprecedented Throughput',
-    description: 'Process over 100 megabits per second of neural data on-device, enabling interfacing with multiple brain regions simultaneously.',
-    stat: '>100 Mbps',
-  },
-  {
-    title: 'Ultra-Low Power',
-    description: 'Consume under 1 watt of power, making the system amenable for portable use without tethering.',
-    stat: '<1 W',
-  },
-  {
-    title: 'Real-Time Closed-Loop',
-    description: 'Support millisecond-scale closed loops involving analysis of large volumes of brain data with high programmability.',
-    stat: 'ms-scale',
-  },
-  {
-    title: 'Highly Programmable',
-    description: 'Unlike current neural interfaces, BrainScan is designed to support many neuroscience studies through flexible software.',
-    stat: 'Flexible',
-  },
-];
 
 const timeline = [
   { year: '2025', label: 'Project begins (October)', active: true },
@@ -63,6 +41,35 @@ export default function WhyPage() {
         </div>
       </section>
 
+      <section className="bg-gray-50 border-y border-gray-100">
+        <div className="max-w-7xl mx-auto px-6 py-16">
+          <div className="text-center mb-12">
+            <p className="section-label mb-3">Why This System</p>
+            <h2 className="font-serif text-3xl md:text-4xl text-gray-900 mb-4">
+              No such platform exists today
+            </h2>
+            <p className="text-gray-500 max-w-2xl mx-auto">
+              BrainScan is developing an implantable brain-computer interface built around BrainCore &mdash;
+              a bespoke chip that achieves energy efficiency orders of magnitude superior to the state of the art.
+            </p>
+          </div>
+          <CapabilityGrid />
+          <div className="text-center mt-10 space-y-4">
+            <p className="text-sm font-medium text-gray-700">Learn more about the system</p>
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8">
+              <Link href="/publications" className="text-unc font-medium hover:text-unc-dark transition-colors text-sm inline-flex items-center gap-1 group">
+                View publications
+                <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
+              </Link>
+              <Link href="/application" className="text-unc font-medium hover:text-unc-dark transition-colors text-sm inline-flex items-center gap-1 group">
+                Explore applications
+                <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Overview (Writeup 1) */}
       <section className="max-w-5xl mx-auto px-6 py-16">
         <div className="grid md:grid-cols-3 gap-12">
@@ -80,25 +87,6 @@ export default function WhyPage() {
               The project spans three years beginning October 2025 and aims to deliver a validated BCI system
               to neuroscience labs across the country by 2028.
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Key capabilities */}
-      <section className="bg-gray-50 border-y border-gray-100">
-        <div className="max-w-5xl mx-auto px-6 py-16">
-          <div className="text-center mb-12">
-            <p className="section-label mb-2">Capabilities</p>
-            <h2 className="font-serif text-3xl text-gray-900">What sets BrainScan apart</h2>
-          </div>
-          <div className="grid sm:grid-cols-2 gap-6">
-            {keyFeatures.map((f) => (
-              <div key={f.title} className="card p-8">
-                <div className="text-3xl font-bold text-unc mb-2 font-mono">{f.stat}</div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{f.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{f.description}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
