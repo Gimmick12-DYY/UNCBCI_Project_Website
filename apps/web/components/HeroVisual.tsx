@@ -2,6 +2,9 @@
 
 import React, { useState } from 'react';
 
+/** Set when a system photo is available, e.g. '/images/brainscan-system.jpg' */
+const SYSTEM_IMAGE_URL: string | undefined = undefined;
+
 type AspectPanel = {
   label: string;
   gradient: string;
@@ -91,6 +94,8 @@ function PanelCard({
 
 export function HeroVisual() {
   const [hovered, setHovered] = useState(false);
+  const hasSystemImage = Boolean(SYSTEM_IMAGE_URL);
+  const showSchematic = !hasSystemImage && !hovered;
 
   return (
     <div
@@ -100,49 +105,55 @@ export function HeroVisual() {
     >
       {/* Unified system view */}
       <div
-        className={`absolute inset-0 bg-gradient-to-br from-slate-100 via-gray-50 to-slate-200 transition-all duration-700 ease-out ${
-          hovered ? 'scale-105 blur-[2px]' : 'scale-100 blur-0'
-        }`}
+        className={`absolute inset-0 transition-all duration-700 ease-out ${
+          hasSystemImage ? 'bg-gray-900' : 'bg-gradient-to-br from-slate-100 via-gray-50 to-slate-200'
+        } ${hovered ? 'scale-105 blur-[2px]' : 'scale-100 blur-0'}`}
       >
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-gray-400">
-          <div
-            className={`relative transition-all duration-500 ${hovered ? 'opacity-20 scale-90' : 'opacity-100 scale-100'}`}
-          >
-            <svg className="w-14 h-14 mb-2 opacity-50" fill="none" stroke="currentColor" strokeWidth={1.25} viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" />
+        {hasSystemImage ? (
+          <img
+            src={SYSTEM_IMAGE_URL}
+            alt="BrainScan System"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        ) : (
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-gray-400">
+            <div
+              className={`relative transition-all duration-500 ${hovered ? 'opacity-20 scale-90' : 'opacity-100 scale-100'}`}
+            >
+              <svg className="w-14 h-14 mb-2 opacity-50" fill="none" stroke="currentColor" strokeWidth={1.25} viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" />
+              </svg>
+              <span className="text-sm font-semibold tracking-wide text-gray-500">BrainScan System</span>
+            </div>
+          </div>
+        )}
+
+        {/* Schematic lines & nodes — placeholder only */}
+        {showSchematic && (
+          <>
+            <svg
+              className="absolute inset-0 w-full h-full pointer-events-none"
+              viewBox="0 0 400 300"
+              preserveAspectRatio="none"
+            >
+              <line x1="200" y1="150" x2="100" y2="65" stroke="rgb(79 124 186 / 0.25)" strokeWidth="1.5" strokeDasharray="4 4" />
+              <line x1="200" y1="150" x2="300" y2="65" stroke="rgb(79 124 186 / 0.25)" strokeWidth="1.5" strokeDasharray="4 4" />
+              <line x1="200" y1="150" x2="200" y2="215" stroke="rgb(79 124 186 / 0.25)" strokeWidth="1.5" strokeDasharray="4 4" />
+              <circle cx="200" cy="150" r="6" fill="rgb(79 124 186 / 0.15)" stroke="rgb(79 124 186 / 0.4)" strokeWidth="1.5" />
             </svg>
-            <span className="text-sm font-semibold tracking-wide text-gray-500">BrainScan System</span>
-          </div>
-        </div>
-
-        {/* Aspect connection lines — idle only */}
-        <svg
-          className={`absolute inset-0 w-full h-full pointer-events-none transition-opacity duration-500 ${
-            hovered ? 'opacity-0' : 'opacity-100'
-          }`}
-          viewBox="0 0 400 300"
-          preserveAspectRatio="none"
-        >
-          <line x1="200" y1="150" x2="100" y2="65" stroke="rgb(79 124 186 / 0.25)" strokeWidth="1.5" strokeDasharray="4 4" />
-          <line x1="200" y1="150" x2="300" y2="65" stroke="rgb(79 124 186 / 0.25)" strokeWidth="1.5" strokeDasharray="4 4" />
-          <line x1="200" y1="150" x2="200" y2="215" stroke="rgb(79 124 186 / 0.25)" strokeWidth="1.5" strokeDasharray="4 4" />
-          <circle cx="200" cy="150" r="6" fill="rgb(79 124 186 / 0.15)" stroke="rgb(79 124 186 / 0.4)" strokeWidth="1.5" />
-        </svg>
-
-        {/* Aspect hint nodes — idle only */}
-        {aspects.map((aspect) => (
-          <div
-            key={aspect.label}
-            className={`absolute ${aspect.hintPosition} -translate-x-1/2 -translate-y-1/2 transition-all duration-500 ${
-              hovered ? 'opacity-0 scale-50' : 'opacity-100 scale-100'
-            }`}
-          >
-            <span className="relative flex h-3 w-3">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-unc/40 opacity-75" />
-              <span className="relative inline-flex rounded-full h-3 w-3 bg-unc/60 ring-2 ring-white/80" />
-            </span>
-          </div>
-        ))}
+            {aspects.map((aspect) => (
+              <div
+                key={aspect.label}
+                className={`absolute ${aspect.hintPosition} -translate-x-1/2 -translate-y-1/2`}
+              >
+                <span className="relative flex h-3 w-3">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-unc/40 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-unc/60 ring-2 ring-white/80" />
+                </span>
+              </div>
+            ))}
+          </>
+        )}
       </div>
 
       {/* Frosted overlay on deconstruct */}
