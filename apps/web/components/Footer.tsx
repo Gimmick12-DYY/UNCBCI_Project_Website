@@ -34,6 +34,7 @@ export function Footer() {
               <li><a href="/why" className="text-gray-600 hover:text-gray-900 transition-colors text-sm">About BrainScan</a></li>
               <li><a href="/application" className="text-gray-600 hover:text-gray-900 transition-colors text-sm">Application</a></li>
               <li><a href="/publications" className="text-gray-600 hover:text-gray-900 transition-colors text-sm">Publications</a></li>
+              <li><a href="/resources" className="text-gray-600 hover:text-gray-900 transition-colors text-sm">Resources</a></li>
               <li><a href="/people" className="text-gray-600 hover:text-gray-900 transition-colors text-sm">People</a></li>
               <li><a href="/partners" className="text-gray-600 hover:text-gray-900 transition-colors text-sm">Partners</a></li>
             </ul>

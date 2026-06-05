@@ -7,6 +7,7 @@ const navLinks = [
   { href: '/why', label: 'About BrainScan' },
   { href: '/application', label: 'Applications' },
   { href: '/publications', label: 'Publications' },
+  { href: '/resources', label: 'Resources' },
   { href: '/people', label: 'People' },
   { href: '/partners', label: 'Partners' },
 ];
