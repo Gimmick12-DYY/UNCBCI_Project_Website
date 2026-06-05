@@ -1,38 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-
-function ImageCard({
-  label,
-  gradient,
-  imageUrl,
-  imagePosition = 'center',
-  footerRight,
-}: {
-  label: string;
-  gradient: string;
-  imageUrl?: string;
-  imagePosition?: string;
-  footerRight?: React.ReactNode;
-}) {
-  return (
-    <div className={`relative rounded-2xl overflow-hidden aspect-[4/3] ${imageUrl ? 'bg-gray-900' : gradient} group cursor-pointer`}>
-      {imageUrl && (
-        <img
-          src={imageUrl}
-          alt={label}
-          className="absolute inset-0 w-full h-full object-cover"
-          style={{ objectPosition: imagePosition }}
-        />
-      )}
-      <div className={`absolute inset-0 bg-gradient-to-t ${imageUrl ? 'from-black/70 via-black/20' : 'from-black/50 via-transparent'} to-transparent`}></div>
-      <div className="absolute top-3 right-3 w-2.5 h-2.5 rounded-full bg-emerald-400 shadow-sm shadow-emerald-400/50"></div>
-      <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-2">
-        <span className="text-white text-sm font-medium">{label}</span>
-        {footerRight}
-      </div>
-    </div>
-  );
-}
+import { HeroVisual } from './HeroVisual';
 
 export function Hero() {
   return (
@@ -62,37 +30,7 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-4">
-          <ImageCard
-            label="Neural Interfacing"
-            gradient="bg-gradient-to-br from-slate-600 to-slate-800"
-          />
-          <ImageCard
-            label="Hardware Design"
-            gradient="bg-gradient-to-br from-amber-700 to-orange-900"
-            imageUrl="/images/hardware-design.avif"
-          />
-          <div
-            className="relative rounded-2xl overflow-hidden aspect-[4/3] bg-gray-50 border border-dashed border-gray-200"
-            aria-label="System image placeholder"
-          />
-          <ImageCard
-            label="Data Processing"
-            gradient="bg-gradient-to-br from-cyan-800 to-teal-900"
-            imageUrl="/images/data-processing.jpg"
-            imagePosition="center 35%"
-            footerRight={
-              <div className="flex items-center gap-2 shrink-0">
-                <span className="flex items-center gap-1 text-white/70 text-xs">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>128 Ch
-                </span>
-                <span className="flex items-center gap-1 text-white/70 text-xs">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>30kHz
-                </span>
-              </div>
-            }
-          />
-        </div>
+        <HeroVisual />
       </div>
     </section>
   );
