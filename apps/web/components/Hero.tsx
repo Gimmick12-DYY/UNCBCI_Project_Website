@@ -59,6 +59,10 @@ export function Hero() {
             label="Hardware Design"
             gradient="bg-gradient-to-br from-amber-700 to-orange-900"
           />
+          <div
+            className="relative rounded-2xl overflow-hidden aspect-[4/3] bg-gray-50 border border-dashed border-gray-200"
+            aria-label="System image placeholder"
+          />
           <ImageCard
             label="Data Processing"
             gradient="bg-gradient-to-br from-cyan-800 to-teal-900"
@@ -72,10 +76,6 @@ export function Hero() {
                 </span>
               </div>
             }
-          />
-          <div
-            className="relative rounded-2xl overflow-hidden aspect-[4/3] bg-gray-50 border border-dashed border-gray-200"
-            aria-label="System image placeholder"
           />
         </div>
       </div>
