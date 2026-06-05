@@ -7,6 +7,16 @@ const nextConfig = {
         destination: '/partners',
         permanent: true,
       },
+      {
+        source: '/research',
+        destination: '/publications',
+        permanent: true,
+      },
+      {
+        source: '/pis',
+        destination: '/people',
+        permanent: true,
+      },
     ];
   },
 };

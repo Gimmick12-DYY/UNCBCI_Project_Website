@@ -1,5 +1,32 @@
 [
   {
+    "id": "abhishek-bhattacharjee",
+    "name": "Abhishek Bhattacharjee",
+    "role": "PI",
+    "major": "Computer Science",
+    "bio": "Principal Investigator at Princeton University.",
+    "photoUrl": "",
+    "affiliation": "Princeton"
+  },
+  {
+    "id": "raghav-pothukuchi",
+    "name": "Raghavendra Pradyumna Pothukuchi",
+    "role": "PI",
+    "major": "Computer Science",
+    "bio": "Principal Investigator at UNC Chapel Hill.",
+    "photoUrl": "/people/raghav-pothukuchi.jpg",
+    "affiliation": "UNC"
+  },
+  {
+    "id": "hitten-zaveri",
+    "name": "Hitten Zaveri",
+    "role": "PI",
+    "major": "Neuroscience",
+    "bio": "Principal Investigator at Yale University.",
+    "photoUrl": "",
+    "affiliation": "Yale"
+  },
+  {
     "id": "martim-gaspar",
     "name": "Martim S. Gaspar",
     "role": "PhD",

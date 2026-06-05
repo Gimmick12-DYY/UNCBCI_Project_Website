@@ -83,13 +83,13 @@ export default async function Page() {
           </div>
           <div className="grid sm:grid-cols-3 gap-8">
             {[
+              { name: 'Abhishek Bhattacharjee', role: 'PI', institution: 'Princeton University' },
               {
                 name: 'Raghavendra Pradyumna Pothukuchi',
                 role: 'PI',
                 institution: 'UNC Chapel Hill',
                 photoUrl: '/people/raghav-pothukuchi.jpg',
               },
-              { name: 'Abhishek Bhattacharjee', role: 'PI', institution: 'Princeton University' },
               { name: 'Hitten Zaveri', role: 'PI', institution: 'Yale University' },
             ].map((p) => (
               <div key={p.name} className="text-center">
@@ -158,7 +158,7 @@ export default async function Page() {
             Explore our research or get in touch to partner with us.
           </p>
           <div className="flex justify-center gap-4 flex-wrap">
-            <Link href="/research" className="inline-block bg-white text-unc-dark font-semibold py-3 px-8 rounded-full hover:bg-gray-100 transition-all shadow-sm">
+            <Link href="/publications" className="inline-block bg-white text-unc-dark font-semibold py-3 px-8 rounded-full hover:bg-gray-100 transition-all shadow-sm">
               Explore Publications
             </Link>
             <Link href="/partners" className="inline-block border border-white/30 text-white font-semibold py-3 px-8 rounded-full hover:bg-white/10 transition-all">

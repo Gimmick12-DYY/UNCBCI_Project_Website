@@ -14,6 +14,17 @@ type Person = {
   affiliation?: string;
 };
 
+function lastName(name: string): string {
+  const parts = name.trim().split(/\s+/);
+  return parts[parts.length - 1] || name;
+}
+
+function sortByLastName<T extends { name: string }>(items: T[]): T[] {
+  return [...items].sort((a, b) =>
+    lastName(a.name).localeCompare(lastName(b.name), undefined, { sensitivity: 'base' }),
+  );
+}
+
 function AffiliationHeading({ children }: { children: React.ReactNode }) {
   return (
     <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-500 mb-4 mt-8 first:mt-0">
@@ -41,13 +52,13 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 export default function PeoplePage() {
   const people = peopleData as Person[];
 
-  const pi = people.filter(p => p.role === 'PI');
-  const partners = people.filter(p => p.role === 'Partner');
-  const phd = people.filter(p => p.role === 'PhD');
+  const pi = sortByLastName(people.filter(p => p.role === 'PI'));
+  const partners = sortByLastName(people.filter(p => p.role === 'Partner'));
+  const phd = sortByLastName(people.filter(p => p.role === 'PhD'));
   const graduates = people.filter(p => p.role === 'Graduate');
-  const uncGrads = graduates.filter(p => !p.affiliation || p.affiliation === 'UNC');
-  const princetonGrads = graduates.filter(p => p.affiliation === 'Princeton');
-  const undergraduates = people.filter(p => p.role === 'Undergraduate');
+  const uncGrads = sortByLastName(graduates.filter(p => !p.affiliation || p.affiliation === 'UNC'));
+  const princetonGrads = sortByLastName(graduates.filter(p => p.affiliation === 'Princeton'));
+  const undergraduates = sortByLastName(people.filter(p => p.role === 'Undergraduate'));
 
   return (
     <div>
@@ -62,7 +73,7 @@ export default function PeoplePage() {
       </section>
 
       <div className="max-w-7xl mx-auto px-6 py-8 space-y-4">
-        <Section title="Principal Investigator">
+        <Section title="Principal Investigators">
           {pi.map(p => <PersonCard key={p.id} {...p} />)}
         </Section>
         <Section title="Partners">

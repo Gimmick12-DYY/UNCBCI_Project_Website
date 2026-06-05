@@ -1,0 +1,62 @@
+{
+  "collaborators": [
+    {
+      "id": "yadav-lab",
+      "name": "Brain-Spine-Machine Interfaces Lab",
+      "subtitle": "Yadav Lab",
+      "institution": "UNC Chapel Hill",
+      "logoUrl": "/logos/Interlocking_NC_CarolinaBlue_Navy_rgb.png",
+      "description": "Research on brain-spine-machine interfaces for neural rehabilitation and motor control.",
+      "url": ""
+    },
+    {
+      "id": "hantman-lab",
+      "name": "Hantman Lab",
+      "subtitle": "Hantman Lab",
+      "institution": "UNC Chapel Hill",
+      "logoUrl": "/logos/Interlocking_NC_CarolinaBlue_Navy_rgb.png",
+      "description": "Investigating neural circuits underlying skilled motor behaviors.",
+      "url": ""
+    },
+    {
+      "id": "krishna-lab",
+      "name": "Krishna Lab",
+      "subtitle": "Krishna Lab",
+      "institution": "UNC Chapel Hill",
+      "logoUrl": "/logos/Interlocking_NC_CarolinaBlue_Navy_rgb.png",
+      "description": "Research at the intersection of computing systems and emerging technologies.",
+      "url": ""
+    }
+  ],
+  "users": [
+    {
+      "id": "example-stanford",
+      "name": "Example Neural Systems Lab",
+      "subtitle": "Loan Program User",
+      "institution": "Stanford University",
+      "logoUrl": "/logos/stanford.svg",
+      "logoScale": 2,
+      "description": "Example lab using BrainScan through the inter-institutional loan program for high-bandwidth neural recording studies.",
+      "url": ""
+    },
+    {
+      "id": "example-princeton",
+      "name": "Example Architecture Lab",
+      "subtitle": "Loan Program User",
+      "institution": "Princeton University",
+      "logoUrl": "/logos/princeton.svg",
+      "logoScale": 2.6,
+      "description": "Example user site evaluating BrainScan hardware for custom chip and embedded systems research.",
+      "url": ""
+    },
+    {
+      "id": "example-uconn",
+      "name": "Example BCI Research Group",
+      "subtitle": "Loan Program User",
+      "institution": "University of Connecticut",
+      "logoUrl": "/logos/uconn.svg",
+      "description": "Placeholder entry for a participating lab accessing BrainScan documentation, tutorials, and design files.",
+      "url": ""
+    }
+  ]
+}

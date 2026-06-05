@@ -80,8 +80,8 @@ export default function ProductPage() {
           <Link href="/why" className="btn-primary">
             Learn More
           </Link>
-          <Link href="/research" className="btn-outline">
-            View Research
+          <Link href="/publications" className="btn-outline">
+            View Publications
           </Link>
         </div>
       </section>

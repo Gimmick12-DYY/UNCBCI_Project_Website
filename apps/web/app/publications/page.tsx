@@ -10,7 +10,12 @@ type Publication = {
   url?: string;
 };
 
-export default function ResearchPage() {
+export const metadata = {
+  title: 'Publications | BrainScan',
+  description: 'Publications from the BrainScan project team in neural engineering, computer architecture, and data processing.',
+};
+
+export default function PublicationsPage() {
   const pubs = (publications as Publication[]).sort((a, b) => (b.year || 0) - (a.year || 0));
 
   return (
@@ -18,9 +23,9 @@ export default function ResearchPage() {
       <section className="bg-white border-b border-gray-100">
         <div className="max-w-5xl mx-auto px-6 py-16 md:py-20 text-center">
           <p className="section-label mb-3">Publications</p>
-          <h1 className="font-serif text-4xl md:text-5xl text-gray-900 mb-4">Research</h1>
+          <h1 className="font-serif text-4xl md:text-5xl text-gray-900 mb-4">Publications</h1>
           <p className="text-xl text-gray-500 max-w-2xl mx-auto">
-            Our team publishes cutting-edge research in neural engineering, computer architecture, and data processing.
+            Our team publishes cutting-edge work in neural engineering, computer architecture, and data processing.
           </p>
         </div>
       </section>
