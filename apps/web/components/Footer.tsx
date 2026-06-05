@@ -31,7 +31,7 @@ export function Footer() {
           <div className="space-y-4">
             <h4 className="text-xs font-semibold uppercase tracking-wider text-gray-400">Pages</h4>
             <ul className="space-y-2">
-              <li><a href="/why" className="text-gray-600 hover:text-gray-900 transition-colors text-sm">Why BrainScan</a></li>
+              <li><a href="/why" className="text-gray-600 hover:text-gray-900 transition-colors text-sm">About BrainScan</a></li>
               <li><a href="/publications" className="text-gray-600 hover:text-gray-900 transition-colors text-sm">Publications</a></li>
               <li><a href="/people" className="text-gray-600 hover:text-gray-900 transition-colors text-sm">People</a></li>
               <li><a href="/partners" className="text-gray-600 hover:text-gray-900 transition-colors text-sm">Partners</a></li>

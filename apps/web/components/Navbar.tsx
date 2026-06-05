@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 
 const navLinks = [
-  { href: '/why', label: 'Why BrainScan' },
+  { href: '/why', label: 'About BrainScan' },
   { href: '/publications', label: 'Publications' },
   { href: '/people', label: 'People' },
   { href: '/partners', label: 'Partners' },

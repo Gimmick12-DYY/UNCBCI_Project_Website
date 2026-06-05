@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Why BrainScan | UNC BCI Project',
+  title: 'About BrainScan | BrainScan',
   description: 'BrainScan: An Instrument for High-Bandwidth Real-Time Closed-Loop Neural Interfacing, funded by NSF MRI Grant #2510152.',
 };
 
@@ -54,7 +54,7 @@ export default function WhyPage() {
             </svg>
           </a>
           <h1 className="font-serif text-4xl md:text-5xl text-gray-900 mb-6 leading-tight">
-            Why BrainScan?
+            About BrainScan
           </h1>
           <p className="text-xl text-gray-500 max-w-3xl mx-auto leading-relaxed">
             The National Science Foundation awarded a Major Research Instrumentation (MRI) grant for
