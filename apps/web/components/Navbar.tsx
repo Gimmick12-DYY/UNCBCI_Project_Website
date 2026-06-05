@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const navLinks = [
   { href: '/why', label: 'About BrainScan' },
-  { href: '/application', label: 'Application' },
+  { href: '/application', label: 'Applications' },
   { href: '/publications', label: 'Publications' },
   { href: '/people', label: 'People' },
   { href: '/partners', label: 'Partners' },
