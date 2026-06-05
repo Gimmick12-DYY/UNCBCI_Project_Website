@@ -182,8 +182,8 @@ export default function WhyPage() {
           with the community. Written documentation and video tutorials will be hosted on this website.
         </p>
         <div className="flex justify-center gap-4 flex-wrap">
-          <Link href="/collaborators" className="btn-primary">
-            View Collaborators
+          <Link href="/partners" className="btn-primary">
+            View Partners
           </Link>
           <a
             href="https://www.nsf.gov/awardsearch/show-award?AWD_ID=2510152"

@@ -2,8 +2,8 @@ import React from 'react';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Collaborators | UNC BCI Project',
-  description: 'The BrainScan ecosystem: research groups and university partners.',
+  title: 'Partners | BrainScan',
+  description: 'The BrainScan ecosystem: research groups, university partners, and users.',
 };
 
 const neuroscienceGroups = [
@@ -44,12 +44,6 @@ const universityPartners = [
   { name: 'North Carolina A&T University', short: 'NC A&T', logo: '/logos/ncat.svg' },
 ];
 
-const pis = [
-  { name: 'Raghavendra Pradyumna Pothukuchi', role: 'PI', institution: 'UNC Chapel Hill' },
-  { name: 'Abhishek Bhattacharjee', role: 'PI', institution: 'Princeton University' },
-  { name: 'Hitten Zaveri', role: 'PI', institution: 'Yale University' },
-];
-
 function GroupCard({ group: g }: { group: { name: string; pi: string; institution: string; url: string; description: string } }) {
   return (
     <div className="card p-6">
@@ -74,21 +68,19 @@ function GroupCard({ group: g }: { group: { name: string; pi: string; institutio
   );
 }
 
-export default function CollaboratorsPage() {
+export default function PartnersPage() {
   return (
     <div>
-      {/* Header */}
       <section className="bg-white border-b border-gray-100">
         <div className="max-w-5xl mx-auto px-6 py-16 md:py-20 text-center">
           <p className="section-label mb-3">Ecosystem</p>
-          <h1 className="font-serif text-4xl md:text-5xl text-gray-900 mb-4">Collaborators</h1>
+          <h1 className="font-serif text-4xl md:text-5xl text-gray-900 mb-4">Partners</h1>
           <p className="text-xl text-gray-500 max-w-2xl mx-auto">
-            BrainScan connects research groups and universities nationwide to advance neural interface technology.
+            BrainScan connects research groups, universities, and users nationwide to advance neural interface technology.
           </p>
         </div>
       </section>
 
-      {/* Research Groups */}
       <section className="max-w-5xl mx-auto px-6 py-16">
         <p className="section-label mb-8">Research Groups</p>
 
@@ -107,7 +99,6 @@ export default function CollaboratorsPage() {
         </div>
       </section>
 
-      {/* University network */}
       <section className="bg-gray-50 border-y border-gray-100">
         <div className="max-w-5xl mx-auto px-6 py-16">
           <div className="text-center mb-12">
@@ -140,11 +131,10 @@ export default function CollaboratorsPage() {
         </div>
       </section>
 
-      {/* CTA */}
       <section className="max-w-5xl mx-auto px-6 py-16 text-center">
-        <h2 className="font-serif text-2xl text-gray-900 mb-4">Want to collaborate?</h2>
+        <h2 className="font-serif text-2xl text-gray-900 mb-4">Want to partner with us?</h2>
         <p className="text-gray-500 max-w-lg mx-auto mb-8">
-          Get in touch with our team to discuss research partnerships, access to BrainScan, or other opportunities.
+          Get in touch with our team to discuss research partnerships, BrainScan access, becoming a user, or other opportunities.
         </p>
         <Link href="/people" className="btn-primary">
           Contact the Team

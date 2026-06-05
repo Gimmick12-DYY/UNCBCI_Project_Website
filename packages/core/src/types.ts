@@ -1,4 +1,4 @@
-export type PersonRole = 'PI' | 'Collaborator' | 'PhD' | 'Graduate' | 'Undergraduate';
+export type PersonRole = 'PI' | 'Partner' | 'PhD' | 'Graduate' | 'Undergraduate';
 
 export interface Person {
   id: string;

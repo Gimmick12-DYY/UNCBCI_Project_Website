@@ -7,7 +7,7 @@ const navLinks = [
   { href: '/why', label: 'Why BrainScan' },
   { href: '/research', label: 'Research' },
   { href: '/people', label: 'People' },
-  { href: '/collaborators', label: 'Collaborators' },
+  { href: '/partners', label: 'Partners' },
   { href: '/pis', label: "PI's" },
 ];
 
@@ -22,18 +22,13 @@ export function Navbar() {
             <div className="w-10 h-10 rounded-full bg-unc-dark flex items-center justify-center overflow-hidden">
               <svg viewBox="0 0 40 40" className="w-10 h-10" fill="none">
                 <circle cx="20" cy="20" r="20" fill="#13294B" />
-                <text x="20" y="24" textAnchor="middle" fontSize="12" fontWeight="bold" fill="white" fontFamily="serif">UNC</text>
+                <text x="20" y="24" textAnchor="middle" fontSize="9" fontWeight="bold" fill="white" fontFamily="sans-serif">Logo</text>
               </svg>
             </div>
             <div className="w-px h-8 bg-gray-200"></div>
-            <div className="flex flex-col">
-              <span className="font-bold text-base leading-none text-gray-900 tracking-tight group-hover:text-unc-dark transition-colors">
-                BCI Project
-              </span>
-              <span className="text-[10px] font-semibold text-gray-400 tracking-widest uppercase mt-0.5">
-                Infinite Brain Lab
-              </span>
-            </div>
+            <span className="font-bold text-xl leading-none text-gray-900 tracking-tight group-hover:text-unc-dark transition-colors">
+              BrainScan
+            </span>
           </div>
         </Link>
 

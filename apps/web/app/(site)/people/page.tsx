@@ -42,7 +42,7 @@ export default function PeoplePage() {
   const people = peopleData as Person[];
 
   const pi = people.filter(p => p.role === 'PI');
-  const collaborators = people.filter(p => p.role === 'Collaborator');
+  const partners = people.filter(p => p.role === 'Partner');
   const phd = people.filter(p => p.role === 'PhD');
   const graduates = people.filter(p => p.role === 'Graduate');
   const uncGrads = graduates.filter(p => !p.affiliation || p.affiliation === 'UNC');
@@ -56,7 +56,7 @@ export default function PeoplePage() {
           <p className="section-label mb-3">Team</p>
           <h1 className="font-serif text-4xl md:text-5xl text-gray-900 mb-4">Our People</h1>
           <p className="text-xl text-gray-500 max-w-2xl mx-auto">
-            Meet the dedicated researchers, students, and collaborators behind the UNC BCI Project.
+            Meet the dedicated researchers, students, and partners behind the BrainScan project.
           </p>
         </div>
       </section>
@@ -65,8 +65,8 @@ export default function PeoplePage() {
         <Section title="Principal Investigator">
           {pi.map(p => <PersonCard key={p.id} {...p} />)}
         </Section>
-        <Section title="Collaborators">
-          {collaborators.map(p => <PersonCard key={p.id} {...p} />)}
+        <Section title="Partners">
+          {partners.map(p => <PersonCard key={p.id} {...p} />)}
         </Section>
         <Section title="PhD Students">
           {phd.map(p => <PersonCard key={p.id} {...p} />)}

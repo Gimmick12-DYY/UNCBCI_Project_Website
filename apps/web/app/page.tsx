@@ -155,14 +155,14 @@ export default async function Page() {
           <h2 className="font-serif text-3xl md:text-4xl mb-4">Interested in our work?</h2>
           <p className="text-gray-300 max-w-2xl mx-auto mb-8">
             BrainScan will be made available to multiple labs nationwide through an inter-institutional loan program.
-            Explore our research or get in touch for collaboration.
+            Explore our research or get in touch to partner with us.
           </p>
           <div className="flex justify-center gap-4 flex-wrap">
             <Link href="/research" className="inline-block bg-white text-unc-dark font-semibold py-3 px-8 rounded-full hover:bg-gray-100 transition-all shadow-sm">
               Explore Publications
             </Link>
-            <Link href="/collaborators" className="inline-block border border-white/30 text-white font-semibold py-3 px-8 rounded-full hover:bg-white/10 transition-all">
-              View Collaborators
+            <Link href="/partners" className="inline-block border border-white/30 text-white font-semibold py-3 px-8 rounded-full hover:bg-white/10 transition-all">
+              View Partners
             </Link>
           </div>
         </div>

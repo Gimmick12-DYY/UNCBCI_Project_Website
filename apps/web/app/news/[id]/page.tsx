@@ -9,7 +9,7 @@ export const dynamic = 'force-dynamic';
 type Person = {
   id: string;
   name: string;
-  role: 'PI' | 'Collaborator' | 'PhD' | 'Graduate' | 'Undergraduate';
+  role: 'PI' | 'Partner' | 'PhD' | 'Graduate' | 'Undergraduate';
   affiliation?: string;
   photoUrl?: string;
 };
