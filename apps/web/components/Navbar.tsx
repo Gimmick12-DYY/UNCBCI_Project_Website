@@ -44,12 +44,6 @@ export function Navbar() {
           >
             Contact Us
           </Link>
-          <Link
-            href="/admin"
-            className="text-sm text-gray-400 italic hover:text-unc transition-colors"
-          >
-            /Admin
-          </Link>
         </nav>
 
         {/* Mobile hamburger */}
@@ -90,13 +84,6 @@ export function Navbar() {
               className="text-base font-semibold text-white bg-unc hover:bg-unc-dark px-4 py-2.5 rounded-lg transition-colors text-center mt-1"
             >
               Contact Us
-            </Link>
-            <Link
-              href="/admin"
-              onClick={() => setMobileOpen(false)}
-              className="text-sm text-gray-400 italic hover:text-unc transition-colors py-2"
-            >
-              /Admin
             </Link>
           </div>
         </nav>

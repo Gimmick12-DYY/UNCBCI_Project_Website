@@ -9,7 +9,6 @@ export function Navbar() {
           <a href="/publications" className="text-gray-700 hover:text-black">Publications</a>
           <a href="/product" className="text-gray-700 hover:text-black">Product</a>
           <a href="/people" className="text-gray-700 hover:text-black">People</a>
-          <a href="/admin" className="text-gray-700 hover:text-black">Admin</a>
         </nav>
       </div>
     </header>
