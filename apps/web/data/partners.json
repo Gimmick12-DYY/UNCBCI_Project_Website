@@ -30,32 +30,77 @@
   ],
   "users": [
     {
-      "id": "example-stanford",
-      "name": "Example Neural Systems Lab",
-      "subtitle": "Loan Program User",
-      "institution": "Stanford University",
-      "logoUrl": "/logos/stanford.svg",
-      "logoScale": 2,
-      "description": "Example lab using BrainScan through the inter-institutional loan program for high-bandwidth neural recording studies.",
-      "url": ""
-    },
-    {
-      "id": "example-princeton",
-      "name": "Example Architecture Lab",
-      "subtitle": "Loan Program User",
+      "id": "buschman-lab",
+      "name": "Buschman Lab",
+      "subtitle": "Tim Buschman",
       "institution": "Princeton University",
       "logoUrl": "/logos/princeton.svg",
       "logoScale": 2.6,
-      "description": "Example user site evaluating BrainScan hardware for custom chip and embedded systems research.",
+      "description": "Rhesus macaque studies to identify the neural basis of working memory, including closed-loop subspace control experiments enabled by BrainScan.",
       "url": ""
     },
     {
-      "id": "example-uconn",
-      "name": "Example BCI Research Group",
-      "subtitle": "Loan Program User",
+      "id": "chang-lab",
+      "name": "Chang Lab",
+      "subtitle": "Steve Chang",
+      "institution": "Yale University",
+      "logoUrl": "/logos/yale.svg",
+      "description": "Rhesus macaque and marmoset studies on prefrontal cortex and amygdala interactions underlying complex social interactions and prosocial behavior.",
+      "url": ""
+    },
+    {
+      "id": "spencer-lab",
+      "name": "Spencer Lab",
+      "subtitle": "Dennis Spencer",
+      "institution": "Yale University",
+      "logoUrl": "/logos/yale.svg",
+      "description": "Rodent studies to identify neural networks responsible for seizure propagation.",
+      "url": ""
+    },
+    {
+      "id": "mitra-lab",
+      "name": "Mitra Lab",
+      "subtitle": "Subhashish Mitra",
+      "institution": "Stanford University",
+      "logoUrl": "/logos/stanford.svg",
+      "logoScale": 2,
+      "description": "Rhesus macaque studies mapping an atlas of retinal ganglion cells toward interfacing the impaired human visual system with an engineered retina.",
+      "url": ""
+    },
+    {
+      "id": "stevenson-lab",
+      "name": "Stevenson Lab",
+      "subtitle": "Ian Stevenson",
       "institution": "University of Connecticut",
       "logoUrl": "/logos/uconn.svg",
-      "description": "Placeholder entry for a participating lab accessing BrainScan documentation, tutorials, and design files.",
+      "description": "Rodent studies to identify hippocampal interactions in visual, auditory, and motor control.",
+      "url": ""
+    },
+    {
+      "id": "sunderam-lab",
+      "name": "Sunderam Lab",
+      "subtitle": "Sridhar Sunderam",
+      "institution": "University of Kentucky",
+      "logoUrl": "/logos/kentucky.svg",
+      "description": "Rodent studies on whether transitions between sleep stages or arousal can promote or inhibit seizures.",
+      "url": ""
+    },
+    {
+      "id": "duwe-lab",
+      "name": "Duwe Lab",
+      "subtitle": "Henry Duwe",
+      "institution": "Iowa State University",
+      "logoUrl": "/logos/iowa-state.svg",
+      "description": "Research on energy harvesting techniques to prolong the battery lifetime of portable neural interfacing devices.",
+      "url": ""
+    },
+    {
+      "id": "limbrick-lab",
+      "name": "Limbrick Lab",
+      "subtitle": "Daniel Limbrick",
+      "institution": "North Carolina A&T State University",
+      "logoUrl": "/logos/ncat.svg",
+      "description": "Research on how physical faults from radiation and power-supply disruptions impact electronics deployed in biological environments.",
       "url": ""
     }
   ]

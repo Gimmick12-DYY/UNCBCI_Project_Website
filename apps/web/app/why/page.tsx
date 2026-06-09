@@ -70,7 +70,7 @@ export default function WhyPage() {
         </div>
       </section>
 
-      {/* Overview (Writeup 1) */}
+      {/* Overview */}
       <section className="max-w-5xl mx-auto px-6 py-16">
         <div className="grid md:grid-cols-3 gap-12">
           <div className="md:col-span-1">
@@ -79,14 +79,60 @@ export default function WhyPage() {
           </div>
           <div className="md:col-span-2 space-y-6 text-gray-600 leading-relaxed">
             <p>
-              This project is developing an implantable brain-computer interface (BCI) built around a custom chip
-              that processes over 100 megabits per second of neural data while consuming under 1 W of power.
-              No such platform exists today in academia or industry.
+              This project is developing an implantable brain-computer interface (BCI) built around BrainCore, a
+              bespoke chip that processes up to 123 megabits per second of neural data while consuming under 1 W
+              of power. No such platform exists today in academia or industry.
             </p>
             <p>
-              The project spans three years beginning October 2025 and aims to deliver a validated BCI system
-              to neuroscience labs across the country by 2028.
+              BrainScan will be realized as a board integrating (1) the BrainCore chip, (2) a programmable FPGA
+              interface to standard analog front-ends and neuroscience sensors, and (3) off-the-shelf components
+              for storage, wireless communication, and power. The project spans three years beginning October 2025
+              and aims to deliver a validated BCI system to neuroscience labs across the country by 2028.
             </p>
+            <p>
+              The instrument will be housed in the BioSense Lab at Yale Neuroscience &amp; Neuroanalytics, with
+              ten portable replicas shared nationwide through a loan program.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-gray-50 border-y border-gray-100">
+        <div className="max-w-5xl mx-auto px-6 py-16">
+          <div className="grid md:grid-cols-3 gap-12">
+            <div className="md:col-span-1">
+              <p className="section-label mb-2">Modern Neuroscience</p>
+              <h2 className="font-serif text-2xl text-gray-900">What experiments require</h2>
+            </div>
+            <div className="md:col-span-2 space-y-5">
+              {[
+                {
+                  title: 'Hundreds of Mbps of neural data',
+                  detail:
+                    'State-of-the-art studies read from hundreds of electrode probes at tens of kilohertz, monitoring single neurons, local field potentials, or both across multiple brain locations.',
+                },
+                {
+                  title: 'Millisecond-scale closed-loop operation',
+                  detail:
+                    'Many experiments require reading and electrically stimulating neural circuits within tens of milliseconds—the refractory period of neurons after action potentials.',
+                },
+                {
+                  title: 'Flexible computation in the loop',
+                  detail:
+                    'Diverse neuroscience studies demand many signal processing and machine learning methods between reading and responding to neural activity, with substantial on-device storage.',
+                },
+              ].map((item) => (
+                <div key={item.title} className="card p-6">
+                  <h3 className="text-base font-bold text-gray-900 mb-2">{item.title}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed">{item.detail}</p>
+                </div>
+              ))}
+              <p className="text-gray-600 text-sm leading-relaxed">
+                No current neural interface meets all three goals simultaneously. BrainScan combines near-brain
+                closed-loop responsiveness with the flexible computation of offloaded processing—without sacrificing
+                performance, timeliness, flexibility, or power.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -164,10 +210,15 @@ export default function WhyPage() {
       {/* Availability */}
       <section className="max-w-5xl mx-auto px-6 py-16 text-center">
         <h2 className="font-serif text-3xl text-gray-900 mb-4">Open to the community</h2>
+        <p className="text-gray-500 max-w-2xl mx-auto mb-4 leading-relaxed">
+          Because replicas cost less than 5% of the first instrument, BrainScan will be made available to
+          multiple labs simultaneously through an inter-institutional loan program. Labs at Yale, Princeton,
+          Stanford, University of Connecticut, University of Kentucky, Iowa State, North Carolina A&amp;T, and
+          others will access portable instruments programmed in familiar languages such as MATLAB and Python.
+        </p>
         <p className="text-gray-500 max-w-2xl mx-auto mb-8 leading-relaxed">
-          BrainScan will be made available to multiple labs nationwide through an inter-institutional loan program.
-          Board design files, software, and high-level simulators for the BrainCore chip will be shared
-          with the community. Written documentation and video tutorials will be hosted on this website.
+          Board design files, software, and high-level simulators for the BrainCore chip will be shared with the
+          community. Written documentation, online tutorials, and workshop training will be hosted on this website.
         </p>
         <div className="flex justify-center gap-4 flex-wrap">
           <Link href="/partners" className="btn-primary">

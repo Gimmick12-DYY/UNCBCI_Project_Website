@@ -1,0 +1,151 @@
+{
+  "intro": "Labs across the country are already committed to using BrainScan, spanning private and public universities in every region of the nation—including EPSCoR states and HBCU institutions. Experiments will cover topics ranging from the underpinnings of working memory and cognition, to the neural circuits underlying complex social interactions, to the retinal circuits responsible for vision. These topics demand different types of efficient processing spanning BrainScan's support for signal processing and classifiers.",
+  "requirements": "All experiments need millisecond-scale closed-loop processing over hundreds of Mbps of neural data, often collected from electrodes placed in different anatomical regions of the brain. These experiments are currently gated on the design of a neural interface with the performance and flexibility offered by BrainScan. To better highlight BrainScan's capabilities in enabling new research, we elaborate four of these use cases below.",
+  "committedLabs": [
+    {
+      "institution": "Yale University",
+      "pi": "Dennis Spencer",
+      "research": "Rodent studies to identify neural networks responsible for seizure propagation."
+    },
+    {
+      "institution": "Yale University",
+      "pi": "Steve Chang",
+      "research": "Rhesus macaque studies to identify prefrontal cortex and amygdala interactions that determine complex social interactions."
+    },
+    {
+      "institution": "Princeton University",
+      "pi": "Tim Buschman",
+      "research": "Rhesus macaque studies to identify the neural basis of working memory."
+    },
+    {
+      "institution": "Stanford University",
+      "pi": "Subhashish Mitra",
+      "research": "Rhesus macaque studies on mapping an atlas of retinal ganglion cells."
+    },
+    {
+      "institution": "University of Connecticut",
+      "pi": "Ian Stevenson",
+      "research": "Rodent studies to identify the interactions of the hippocampus in visual, auditory, and motor control."
+    },
+    {
+      "institution": "University of Kentucky",
+      "pi": "Sridhar Sunderam",
+      "research": "Rodent studies on whether certain transitions between sleep stages or arousal can promote or inhibit seizures."
+    },
+    {
+      "institution": "Iowa State University",
+      "pi": "Henry Duwe",
+      "research": "Research on using energy harvesting techniques to prolong the battery lifetime of portable devices."
+    },
+    {
+      "institution": "North Carolina A&T State University",
+      "pi": "Daniel Limbrick",
+      "research": "Research on how physical faults from radiation and disruptions in power supply impact electronics in biological environments."
+    }
+  ],
+  "themes": [
+    {
+      "title": "Working Memory & Cognition",
+      "description": "Identify how the contents of working memory are represented in patterns of neural activity using closed-loop subspace control."
+    },
+    {
+      "title": "Social Interaction",
+      "description": "Monitor and modulate large-scale neural networks during real-life social behavior between freely moving primates."
+    },
+    {
+      "title": "Retinal Circuits & Vision",
+      "description": "Map retinal circuits and enable recalibration over hours to address drift in high-density electrode arrays."
+    },
+    {
+      "title": "Microelectronics Reliability",
+      "description": "Study transient faults in BrainScan's core components using real-time application traces and fault injection."
+    }
+  ],
+  "useCases": [
+    {
+      "id": "working-memory",
+      "title": "Neural underpinnings of working memory",
+      "lab": "Buschman Lab",
+      "institution": "Princeton University",
+      "summary": "BrainScan's ability to read a large volume of neurons and offer millisecond-scale closed-loop operation while permitting relatively complex operations like support vector machines will drive experiments that cannot be performed today—helping identify how the contents of working memory are represented in patterns of neural activity.",
+      "specs": {
+        "goal": "Enabling a new model of cognitive control, linking hidden and visible subspaces of neural representation.",
+        "animal": "Rhesus macaque",
+        "brainRegions": "Prefrontal and parietal cortex",
+        "sensors": "Intan headstage to 64 electrodes, 30 Mbps",
+        "closedLoop": "<10 milliseconds",
+        "portability": "Untethered for freely moving animals",
+        "computation": "Spike detection, spectral processing methods, SVM"
+      },
+      "paragraphs": [
+        "The Buschman Lab at Princeton has recently reported that the contents of working memory are represented in patterns of neural activity. When animals remember two items, each is stored in its own 'subspace' within the high-dimensional space of the neural population within a region. Using neural interfaces that record from the prefrontal and parietal cortex of a rhesus macaque, the Buschman Lab has shown that when the animal used one of the items in working memory—e.g., by reporting its color—this led to the item's neural representation being transformed from its 'storage' subspace to an 'action' subspace driving behavior. These experiments suggest that storing information in different subspaces avoids interference between items and reduces interference with new sensory inputs.",
+        "With this context, the Buschman Lab now wishes to create a dramatically new model of cognitive control, which shows that controlling which subspace of neural activity represents a particular piece of information allows the brain to control how and when that information is processed. This model suggests the brain controls how and when information is acted on by transforming it from a 'hidden' subspace to a 'visible' subspace. Once in the visible subspace, the model predicts information should flow to downstream regions, where it can be computed upon and lead to behavior. Using control theory, they wish to control the dynamics of neural activity to shift representations from one subspace to another. This would allow causal determination of whether shifting a representation into an action-potent subspace engages downstream regions and leads to specific computations and behaviors.",
+        "Establishing this model requires neural interfaces with BrainScan's capabilities to record from hundreds of electrodes across brain regions to cover large populations of neurons. It also requires millisecond-scale approximation of the state of these neuronal populations and their response to electrical perturbation. In-the-loop processing must isolate spiking waveforms from large populations, classify representations into task-specific subspaces (e.g., SVM), and drive feedback through multiple stimulating electrodes to test whether cognition can be perturbed by changing subspaces—all while enabling untethered animals to exhibit naturalistic behavior in complex environments.",
+        "While existing neural interfaces fall short of simultaneously meeting these needs, BrainScan can process large volumes of data in closed loop with a variety of methods and with power dissipation that prolongs battery life. To explore these experiments, BrainScan will interface to Cambridge Neurotech headstages that attach to hundreds of electrodes."
+      ]
+    },
+    {
+      "id": "social-interactions",
+      "title": "Neural mechanisms underlying complex social interactions",
+      "lab": "Chang Lab",
+      "institution": "Yale University",
+      "summary": "BrainScan can drive experiments that require continuous monitoring and modulation of large-scale neural networks in different brain regions during socially interacting primates.",
+      "specs": {
+        "goal": "Research on how social interactions among animals are computed in neural circuits; new studies on how neural states guide prosocial/antisocial behavior.",
+        "animal": "Rhesus macaque and common marmoset",
+        "brainRegions": "Medial prefrontal cortex, amygdala",
+        "sensors": "Intan headstage to 256 electrodes, 100 Mbps",
+        "closedLoop": "<10 milliseconds",
+        "portability": "Untethered for freely moving and interacting animals",
+        "computation": "Band-pass filtering, FFT, DWT, cross-correlation, EMD, DTW"
+      },
+      "paragraphs": [
+        "The Chang Lab at Yale needs a neural interface to investigate the neural mechanisms underlying complex social interactions in rhesus macaques and common marmosets. They have been studying how neurons in the medial prefrontal cortex and the amygdala interact at a network level to compute prosocial and antisocial decisions and process vicarious reward when monkeys make social decisions impacting the reward outcomes of a conspecific. The team has discovered that different social information is carried in a frequency-specific manner in brain networks in these areas. Moreover, they have found widespread representations of interactive eye gaze variables involved in real-life social gaze interactions in multiple prefrontal cortical areas and the amygdala.",
+        "Future experiments require a neural interface that processes hundreds of Mbps of data and applies stimulation based on interactions between socially interacting monkeys. A range of computation is needed within this loop—band-pass filtering, Fourier transforms, wavelet transforms, and correlation—that is currently not feasible within milliseconds at data rates exceeding Kbps. BrainScan will fill this void.",
+        "The Chang Lab also studies spontaneous social neural states in the primate brain that govern how social information is processed in prosocial and antisocial ways. These studies require closed-loop stimulation of the prefrontal cortex, triggered by specific real-life social behavioral events between pairs of freely roaming monkeys—such as looking at the eyes of a conspecific—to modulate dynamic social attention.",
+        "For these experiments, BrainScan will continuously monitor and selectively trigger social engagement opportunities based on specific neural states, and enable modulation of social behaviors via network-level perturbation—while operating at adequately low power to enable untethered animals and battery efficiency for experiments lasting hours. This is not possible with current neural interfaces at the desired data rates."
+      ]
+    },
+    {
+      "id": "retinal-circuits",
+      "title": "Retinal circuits and visual interfacing",
+      "lab": "Mitra Lab",
+      "institution": "Stanford University",
+      "summary": "BrainScan can be used in experimental setups that map retinal circuits in rhesus macaques, with a goal of interfacing the impaired human visual system with an engineered retina.",
+      "specs": {
+        "goal": "Determining how electrodes engage with retinal circuits; mapping retinal circuits via controlled stimulus and reading.",
+        "animal": "Rhesus macaque",
+        "brainRegions": "Retinal ganglion cells",
+        "sensors": "Custom SPI headstage, 256-electrode array, 123 Mbps",
+        "closedLoop": "<10 milliseconds",
+        "portability": "Does not require, but benefits from, untethered use",
+        "computation": "Spectral processing, compression (LZ4, LZMA, DWTMA)"
+      },
+      "paragraphs": [
+        "The Mitra Lab is interested in BrainScan because they lack neural interfaces for two critical use cases.",
+        "First, BrainScan's flexible computational capabilities will enable addressing drift—a phenomenon where the relative position or distribution of neurons with respect to an electrode array shifts over time, or the manner in which the monitored neuron represents information changes. Both situations lead to variations that must be monitored and accounted for, as they can considerably compromise the reliability and interpretability of neural signals. Effective recalibration requires millisecond-scale closed-loop processing using many spectral methods over data collected from hundreds of electrodes. No neural interface can currently support these needs, but BrainScan will enable recalibration of neural devices continuously over minutes and hours to assess and mitigate drift.",
+        "Second, to meet the bandwidth requirements of closed-loop operation, existing interfaces use tethered connections, limiting mobility. Untethered wireless connections are needed, but the bandwidth constraints of wireless connections necessitate intelligent batching of stimuli and compression. BrainScan will address this gap with on-chip compute, enabling on-the-fly decisions on each stimulus response at high data rates—uniquely positioned to identify which retinal cells are modulated after an applied stimulus."
+      ]
+    },
+    {
+      "id": "microelectronics",
+      "title": "Microelectronics in complex biological environments",
+      "lab": "Limbrick Lab",
+      "institution": "North Carolina A&T State University",
+      "summary": "The Limbrick Lab researches ways to model, simulate, and understand the impact of transient faults in microprocessors at the software, architecture, microarchitecture, circuit, and physical design levels.",
+      "specs": {
+        "goal": "Research on how faults affect computation in extreme biological environments.",
+        "animal": "All model systems",
+        "brainRegions": "All",
+        "sensors": "All supported headstages",
+        "closedLoop": "Full closed-loop capability",
+        "portability": "All form factors",
+        "computation": "Any computation supported by BrainCore"
+      },
+      "paragraphs": [
+        "BrainScan contains core components that are susceptible to physical faults, including radiation-induced soft errors and disruptions in power supply. The Limbrick Lab will use BrainScan to provide real-time application data for fault injection studies.",
+        "Application traces will be created using a recorded processor run to generate a representative list of instructions. This information will be used to create simulations in architectural simulators. Additionally, software verification tools will be used to extract the reachable states for the application. Fault injection will be performed by extracting input vectors from the hardware structures, creating equivalent logical descriptions, and performing SAT-based equivalence checking."
+      ]
+    }
+  ]
+}

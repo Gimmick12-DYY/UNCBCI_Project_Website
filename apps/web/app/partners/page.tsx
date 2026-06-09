@@ -71,7 +71,8 @@ export default function PartnersPage() {
           <p className="section-label mb-3">Ecosystem</p>
           <h1 className="font-serif text-4xl md:text-5xl text-gray-900 mb-4">Partners</h1>
           <p className="text-xl text-gray-500 max-w-2xl mx-auto">
-            BrainScan connects collaborating labs and users nationwide to advance neural interface technology.
+            BrainScan connects UNC-based collaborators with a nationwide network of committed user labs through
+            an inter-institutional loan program.
           </p>
         </div>
       </section>
@@ -84,7 +85,7 @@ export default function PartnersPage() {
         />
         <PartnerSection
           title="Users"
-          description="Labs participating in the BrainScan inter-institutional loan program. Example entries shown below."
+          description="Labs committed to using BrainScan nationwide, spanning R1 universities, EPSCoR states, and HBCU institutions."
           partners={users}
         />
       </div>
