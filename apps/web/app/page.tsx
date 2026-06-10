@@ -52,6 +52,7 @@ export default async function Page() {
                 role: 'PI',
                 institution: 'UNC Chapel Hill',
                 photoUrl: '/people/raghav-pothukuchi.jpg',
+                websiteUrl: 'https://www.cs.unc.edu/~raghav/',
               },
               { name: 'Hitten Zaveri', role: 'PI', institution: 'Yale University' },
             ].map((p) => (
@@ -65,7 +66,15 @@ export default async function Page() {
                     </svg>
                   )}
                 </div>
-                <h3 className="font-bold text-gray-900 text-sm">{p.name}</h3>
+                <h3 className="font-bold text-gray-900 text-sm">
+                  {'websiteUrl' in p && p.websiteUrl ? (
+                    <a href={p.websiteUrl} target="_blank" rel="noreferrer" className="hover:text-unc transition-colors">
+                      {p.name}
+                    </a>
+                  ) : (
+                    p.name
+                  )}
+                </h3>
                 <p className="text-xs text-unc font-semibold">{p.role}</p>
                 <p className="text-xs text-gray-400 mt-0.5">{p.institution}</p>
               </div>

@@ -12,6 +12,7 @@ type Person = {
   bio: string;
   photoUrl?: string;
   affiliation?: string;
+  websiteUrl?: string;
 };
 
 function lastName(name: string): string {

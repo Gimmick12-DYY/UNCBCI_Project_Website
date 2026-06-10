@@ -15,7 +15,8 @@
     "major": "Computer Science",
     "bio": "Principal Investigator at UNC Chapel Hill.",
     "photoUrl": "/people/raghav-pothukuchi.jpg",
-    "affiliation": "UNC"
+    "affiliation": "UNC",
+    "websiteUrl": "https://www.cs.unc.edu/~raghav/"
   },
   {
     "id": "hitten-zaveri",
@@ -34,7 +35,8 @@
     "major": "Computer Science, PhD",
     "bio": "I am a PhD student at UNC-Chapel Hill focused on brain-computer interface hardware. I am interested in custom ASIC design for neural recording systems, particularly in building near-probe signal processing architectures that interface directly with high-density electrode arrays.",
     "photoUrl": "/people/martim-gaspar.jpg",
-    "affiliation": "UNC"
+    "affiliation": "UNC",
+    "websiteUrl": "https://martimgaspar.com/"
   },
   {
     "id": "eric-wu",

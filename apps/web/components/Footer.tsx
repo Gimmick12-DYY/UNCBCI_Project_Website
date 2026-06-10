@@ -13,7 +13,7 @@ export function Footer() {
               <h3 className="font-bold text-lg text-gray-900">BrainScan</h3>
             </div>
             <p className="text-gray-500 text-sm leading-relaxed max-w-sm">
-              BrainScan: An Instrument for High-Bandwidth Real-Time Closed-Loop Neural Interfacing at the University of North Carolina at Chapel Hill.
+              BrainScan: An Instrument for High-Bandwidth Real-Time Closed-Loop Neural Interfacing.
             </p>
             <p className="text-xs text-gray-400 leading-relaxed">
               Supported by NSF Major Research Instrumentation Grant{' '}
@@ -64,7 +64,17 @@ export function Footer() {
 
         <div className="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400">
           <p>&copy; {new Date().getFullYear()} BrainScan. All rights reserved.</p>
-          <p className="mt-2 md:mt-0">University of North Carolina at Chapel Hill</p>
+          <p className="mt-2 md:mt-0">
+            Website by{' '}
+            <a
+              href="https://www.yuyangdeng.com"
+              target="_blank"
+              rel="noreferrer"
+              className="text-gray-500 hover:text-unc transition-colors"
+            >
+              Yuyang Deng
+            </a>
+          </p>
         </div>
       </div>
     </footer>

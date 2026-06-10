@@ -7,10 +7,6 @@ export function Hero() {
     <section className="max-w-7xl mx-auto px-6 py-16 md:py-24">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div className="space-y-8">
-          <div className="section-label">
-            Slogan placeholder
-          </div>
-
           <h1 className="font-serif text-5xl md:text-6xl leading-[1.1] tracking-tight">
             Advancing{' '}
             <span className="text-unc">Brain-Computer Interfaces</span>

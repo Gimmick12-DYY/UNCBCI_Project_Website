@@ -9,7 +9,16 @@ function displayName(name: string, preferredName?: string) {
   return lastName ? `${preferredName} ${lastName}` : preferredName;
 }
 
-export function PersonCard({ name, preferredName, bio, photoUrl, role, projectRole, major, affiliation }: {
+export function PersonCard({
+  name,
+  preferredName,
+  bio,
+  photoUrl,
+  projectRole,
+  major,
+  affiliation,
+  websiteUrl,
+}: {
   name: string;
   preferredName?: string;
   bio: string;
@@ -18,9 +27,27 @@ export function PersonCard({ name, preferredName, bio, photoUrl, role, projectRo
   projectRole?: string;
   major?: string;
   affiliation?: string;
+  websiteUrl?: string;
 }) {
   const [showBio, setShowBio] = useState(false);
   const shownName = displayName(name, preferredName);
+
+  const nameContent = websiteUrl ? (
+    <a
+      href={websiteUrl}
+      target="_blank"
+      rel="noreferrer"
+      className="hover:text-unc transition-colors inline-flex items-center gap-1.5 group/link"
+      onClick={(e) => e.stopPropagation()}
+    >
+      {shownName}
+      <svg className="w-3.5 h-3.5 opacity-0 group-hover/link:opacity-100 transition-opacity shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+      </svg>
+    </a>
+  ) : (
+    shownName
+  );
 
   return (
     <div
@@ -41,7 +68,9 @@ export function PersonCard({ name, preferredName, bio, photoUrl, role, projectRo
       </div>
 
       <div className="p-4">
-        <h3 className="text-base font-bold text-gray-900 group-hover:text-unc-dark transition-colors leading-tight">{shownName}</h3>
+        <h3 className="text-base font-bold text-gray-900 group-hover:text-unc-dark transition-colors leading-tight">
+          {nameContent}
+        </h3>
         {projectRole && <div className="text-xs font-semibold text-unc uppercase tracking-wider mt-1">{projectRole}</div>}
         {affiliation && <div className="text-xs text-gray-400 mt-0.5">{affiliation}</div>}
       </div>
@@ -52,9 +81,20 @@ export function PersonCard({ name, preferredName, bio, photoUrl, role, projectRo
             showBio ? 'opacity-100' : 'opacity-0 pointer-events-none'
           }`}
         >
-          <h3 className="text-base font-bold text-gray-900 mb-1">{shownName}</h3>
+          <h3 className="text-base font-bold text-gray-900 mb-1">{nameContent}</h3>
           {major && <div className="text-xs font-semibold text-unc uppercase tracking-wider mb-3">{major}</div>}
           <p className="text-gray-600 text-sm leading-relaxed">{bio}</p>
+          {websiteUrl && (
+            <a
+              href={websiteUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-4 text-unc font-medium text-sm hover:text-unc-dark inline-flex items-center gap-1"
+            >
+              Visit website
+              <span aria-hidden>&rarr;</span>
+            </a>
+          )}
         </div>
       )}
     </div>

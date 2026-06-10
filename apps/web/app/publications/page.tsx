@@ -24,8 +24,10 @@ export default function PublicationsPage() {
         <div className="max-w-5xl mx-auto px-6 py-16 md:py-20 text-center">
           <p className="section-label mb-3">Publications</p>
           <h1 className="font-serif text-4xl md:text-5xl text-gray-900 mb-4">Publications</h1>
-          <p className="text-xl text-gray-500 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed">
             Our team publishes cutting-edge work in neural engineering, computer architecture, and data processing.
+            These papers represent the foundational research behind BrainScan—from custom neural processing chips
+            and BrainCore architecture to the signal processing methods the instrument builds on.
           </p>
         </div>
       </section>
