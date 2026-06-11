@@ -19,7 +19,20 @@ export default function WhyPage() {
     <div>
       {/* Hero */}
       <section className="bg-white border-b border-gray-100">
-        <div className="max-w-5xl mx-auto px-6 py-16 md:py-24 text-center">
+        <div className="max-w-5xl mx-auto px-6 pt-10 md:pt-12 pb-16 md:pb-24">
+          <figure className="rounded-2xl border border-gray-100 bg-white shadow-sm overflow-hidden mb-12 md:mb-16">
+            <img
+              src="/images/brainscan-architecture.png"
+              alt="BrainScan system architecture: head-mounted case on a rodent, PCB layout with BrainCore, FPGA, radio, and battery, and BrainCore processing element block diagram"
+              className="w-full h-auto"
+            />
+            <figcaption className="px-6 py-4 text-sm text-gray-500 text-center border-t border-gray-100 bg-gray-50/80">
+              BrainScan integrates BrainCore with an FPGA, radio, and battery on a portable board, connecting to
+              standard headstages and neural probes for closed-loop experiments.
+            </figcaption>
+          </figure>
+
+          <div className="text-center">
           <a
             href="https://www.nsf.gov/awardsearch/show-award?AWD_ID=2510152"
             target="_blank"
@@ -38,6 +51,7 @@ export default function WhyPage() {
             The National Science Foundation awarded a Major Research Instrumentation (MRI) grant for
             &ldquo;Development of BrainScan: An Instrument for High-Bandwidth Real-Time Closed-Loop Neural Interfacing.&rdquo;
           </p>
+          </div>
         </div>
       </section>
 
@@ -72,7 +86,7 @@ export default function WhyPage() {
 
       {/* Overview */}
       <section className="max-w-5xl mx-auto px-6 py-16">
-        <div className="grid md:grid-cols-3 gap-12 mb-12">
+        <div className="grid md:grid-cols-3 gap-12">
           <div className="md:col-span-1">
             <p className="section-label mb-2">Project Overview</p>
             <h2 className="font-serif text-2xl text-gray-900">BrainScan &amp; BrainCore</h2>
@@ -95,18 +109,6 @@ export default function WhyPage() {
             </p>
           </div>
         </div>
-
-        <figure className="rounded-2xl border border-gray-100 bg-white shadow-sm overflow-hidden">
-          <img
-            src="/images/brainscan-architecture.png"
-            alt="BrainScan system architecture: head-mounted case on a rodent, PCB layout with BrainCore, FPGA, radio, and battery, and BrainCore processing element block diagram"
-            className="w-full h-auto"
-          />
-          <figcaption className="px-6 py-4 text-sm text-gray-500 text-center border-t border-gray-100 bg-gray-50/80">
-            BrainScan integrates BrainCore with an FPGA, radio, and battery on a portable board, connecting to
-            standard headstages and neural probes for closed-loop experiments.
-          </figcaption>
-        </figure>
       </section>
 
       <section className="bg-gray-50 border-y border-gray-100">
