@@ -2,8 +2,7 @@
 
 import React, { useState } from 'react';
 
-/** Set when a system photo is available, e.g. '/images/brainscan-system.jpg' */
-const SYSTEM_IMAGE_URL: string | undefined = undefined;
+const SYSTEM_IMAGE_URL = '/images/brainscan-system.png';
 
 type AspectPanel = {
   label: string;
@@ -106,14 +105,14 @@ export function HeroVisual() {
       {/* Unified system view */}
       <div
         className={`absolute inset-0 transition-all duration-700 ease-out ${
-          hasSystemImage ? 'bg-gray-900' : 'bg-gradient-to-br from-slate-100 via-gray-50 to-slate-200'
+          hasSystemImage ? 'bg-white' : 'bg-gradient-to-br from-slate-100 via-gray-50 to-slate-200'
         } ${hovered ? 'scale-105 blur-[2px]' : 'scale-100 blur-0'}`}
       >
         {hasSystemImage ? (
           <img
             src={SYSTEM_IMAGE_URL}
-            alt="BrainScan System"
-            className="absolute inset-0 w-full h-full object-cover"
+            alt="BrainScan head-mounted neural interface with exploded view of BrainScan board, adapter, headstage, and probe"
+            className="absolute inset-0 w-full h-full object-contain p-3"
           />
         ) : (
           <div className="absolute inset-0 flex flex-col items-center justify-center text-gray-400">
